@@ -1,88 +1,74 @@
-.header {
-  padding: 10px 16px;
-  background: yellow;
-  color: yellow;
-}
-h1 {
-	color: #000;
-	font-family: 'Inter';
-	font-size: 26px;
-	text-align: center;
-	cursor: pointer;
-}
-h2 {
-	color: #000;
-	font-family: 'Inter';
-	font-size: 14px;
-	text-align: center;
-}
-p {
-	color: #000;
-	font-size: 14px;
-	text-align: center;
-}
-.container {
-	font-family: 'Inter';
-	width: 543px;
-	height: 720px;
-	color: #000;
-	margin: auto; 
-}
-input[type=text], select, textarea {
-  width: 492px;
-  height: 63px;
-  padding-left: 20px; /* Some padding */ 
-  border: 1px solid #000;
-  border-radius: 33px; /* Rounded borders */
-  margin-top: 11px; /* Add a top margin */
-  margin-bottom: 32px; /* Bottom margin */
-  font-family: 'Inter';
-  font-style: light;
-  font-size: 15px;
-  resize: horizontal; /* Allow the user to vertically resize the textarea (not horizontally) */
-}
+@font-face {
+	font-family: "Gilroy-Bold"; 
+	src: url("../fonts/Gilroy-Bold.ttf") format("truetype"); 
+	font-style: normal; 
+	font-weight: normal; 
+} 
 
-/* Style the submit button with a specific background color etc */
-button[type=submit] {
-  position: absolute;
-  padding-top: 0;
-  width: 491px;
-  height: 62px;
-  background-color: #D62140;
-  font-family: 'Inter';
-  font-style: bold;
-  color: white;
-  padding-left: 26;
-  padding: 14px 196px;
-  border: none;
-  border-radius: 33px;
-  cursor: pointer;
-  box-sizing: 492px;
-}
-
-/* When moving the mouse over the submit button, add a darker green color */
-button[type=submit]:hover {
-  background-color: #45a049;
-}
-
-/* Add a background color and some padding around the form */
-.container {
-  background-color: #fffff;
-  width: 517px;
-  height: 720px;
-  box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.25);
-  padding: 26px;
-}
-h3 {
-	padding-top: 27px;
-	padding-bottom: 45px;
-  text-decoration: blink;
-}
-h3 a {
-  color: black;
-  font-size: 14px;
+header {
+	background-color: yellow;
+	display: flex;
+	filter: drop-shadow(6px 6px 10px rgba(0, 0, 0, 0.10));
 }
 
 body {
-  margin: 0px;
+	font-family: 'Gilroy-Bold';
+	margin: 0;
+}
+
+.logo {
+	padding-top: 17px;
+	padding-bottom: 18px;
+	padding-left: 30px;
+	margin-right: 300px;
+}
+
+a {
+
+	margin-right: 30px;
+}
+
+header a {
+	color: black;
+}
+
+.menu li a {
+	display: flex;
+	text-transform: uppercase;
+	text-decoration: underline;
+	font-size: 14px;
+	margin-left: auto;
+}
+
+.menu li {
+	margin-right: 30px;
+	display: flex;
+	float: right;
+}
+
+.menu {
+	display: flex;
+}
+
+div {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 1170px;
+	padding-left: 18%;
+}
+
+.tel {
+	font-size: 18px;
+}
+
+.about {
+	margin: 0;
+	height: 100%;
 }
