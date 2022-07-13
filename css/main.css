@@ -6,9 +6,12 @@
 } 
 
 header {
-	background-color: yellow;
+	background-color: rgb(240, 240, 10);
 	display: flex;
 	filter: drop-shadow(6px 6px 10px rgba(0, 0, 0, 0.10));
+	position: fixed;
+	top: 0;
+	width: 100%
 }
 
 body {
@@ -60,15 +63,52 @@ div {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	width: 1170px;
-	padding-left: 18%;
+	width: 700px;
+	padding-left: 11px;
 }
 
 .tel {
-	font-size: 18px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding-left: 0;
 }
 
 .about {
 	margin: 0;
 	height: 100%;
 }
+
+.catalogButton {
+	color: black;
+	margin-top: 20%;
+	font-size: 1.5rem;
+}
+
+.screen {
+	display: flex;
+  	flex-direction: column;
+    align-items: center;
+  	justify-content: center;
+	height: 100vh;
+	width: 100vw;
+	transition: margin 0.5s ease-out;
+}
+
+.screen.up {
+	margin-top: -100vh;
+}
+
+.screen.scrollup {
+	margin-top: +100vh;
+}
+
+.lovemessage {
+	font-size: 60px;
+}
+
+.upbutton {
+	font-size: 40px;
+	color: black;
+}
+
