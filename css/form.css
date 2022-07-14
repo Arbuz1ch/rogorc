@@ -1,62 +1,146 @@
-.header {
-  padding: 10px 16px;
-  width: auto;
-  background: yellow;
-  color: yellow;
-  margin-bottom: 50px;
+@font-face {
+  font-family: "Gilroy-Bold"; 
+  src: url("../fonts/Gilroy-Bold.ttf") format("truetype"); 
+  font-style: normal; 
+  font-weight: normal; 
 }
+
+@font-face {
+  font-family: "Gilroy-Medium"; 
+  src: url("../fonts/Gilroy-Medium.ttf") format("truetype"); 
+  font-style: normal; 
+  font-weight: normal; 
+}
+
+@font-face {
+  font-family: "Gilroy-Regular"; 
+  src: url("../fonts/Gilroy-Regular.ttf") format("truetype"); 
+  font-style: normal; 
+  font-weight: normal; 
+}
+
+@font-face {
+  font-family: "Gilroy-Light"; 
+  src: url("../fonts/Gilroy-Light.ttf") format("truetype"); 
+  font-style: normal; 
+  font-weight: normal; 
+}
+
+header {
+  background-color: rgb(240, 240, 10);
+  display: flex;
+  filter: drop-shadow(6px 6px 10px rgba(0, 0, 0, 0.10));
+  /*position: fixed;*/
+  top: 0;
+  width: 100%;
+  height: 110px;
+}
+
+.logo {
+    padding-top: 17px;
+    padding-bottom: 18px;
+    padding-left: 30px;
+    margin-right: 300px;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 700px;
+  padding-left: 11px;
+}
+
+.tel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 0;
+}
+
+.about {
+  margin: 0;
+  height: 100%;
+}
+
+.menu li a {
+  display: flex;
+  text-transform: uppercase;
+  text-decoration: underline;
+  font-size: 14px;
+  margin-left: auto;
+}
+
+.menu li {
+  margin-right: 30px;
+  display: flex;
+  float: right;
+}
+
+.menu {
+  display: flex;
+}
+
 h1 {
-	color: #000;
-	font-family: 'Inter';
-	font-size: 26px;
-	text-align: center;
-	cursor: pointer;
+  color: #000;
+  font-family: 'Inter';
+  font-size: 26px;
+  text-align: center;
+  cursor: pointer;
 }
+
 h2 {
-	color: #000;
-	font-family: 'Inter';
-	font-size: 14px;
-	text-align: center;
+  color: #000;
+  font-family: 'Inter';
+  font-size: 14px;
+  text-align: center;
 }
+
 p {
-	color: #000;
-	font-size: 14px;
-	text-align: center;
+  color: #000;
+  font-size: 14px;
+  text-align: center;
 }
 
 input[type=text], select, textarea {
-  box-sizing: border-box;
-  width: 492px;
-  height: 63px;
-  background-color: white;
-  padding-left: 20px; /* Some padding */ 
+  width: 100%;
+  height: 56px;
+  /*padding-left: 0px;*/
   border: 1px solid #000;
-  border-radius: 33px; /* Rounded borders */
-  margin-top: 11px; /* Add a top margin */
-  margin-bottom: 32px; /* Bottom margin */
-  font-family: 'Inter';
-  font-style: light;
+  border-radius: 33px;
+  margin-top: 10px;
+  margin-bottom: 32px;
+  font-family: 'Gilroy-Light';
   font-size: 15px;
-  resize: horizontal; /* Allow the user to vertically resize the textarea (not horizontally) */
+  resize: vertical; /* Allow the user to vertically resize the textarea (not horizontally) */
 }
 
-/* Style the submit button with a specific background color etc */
+::placeholder {
+  padding-left: 21px;
+}
+
+::textarea {
+  padding-left: 21px;
+}
+
+input {
+  width: 100%;
+}
+
 button[type=submit] {
-  font-weight: 700;
-  text-align: center;
-  position: absolute;
-  padding-top: 0;
-  width: 491px;
-  height: 60px;
+  font-size: 15px;
+  width: 100%;
+  height: 62px;
   background-color: #D62140;
-  font-family: 'Inter';
+  font-family: 'Gilroy-Bold';
+  font-style: bold;
   color: white;
   /*padding-left: 26;*/
   /*padding: 14px 196px;*/
-  padding-left: 60px;
-  padding-right: 60px;
+  padding-left: 0px;
+  padding-right: 0px;
   border: none;
-  border-radius: 30px;
+  border-radius: 33px;
   cursor: pointer;
   box-sizing: border-box;
 }
@@ -66,18 +150,10 @@ button[type=submit]:hover {
   background-color: #45a049;
 }
 
-/* Add a background color and some padding around the form */
-.containe {
-  background-color: #ffffff;
-  width: 517px;
-  height: 720px;
-  box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.25);
-  padding: 26px;
-}
 h3 {
-	padding-top: 27px;
-	padding-bottom: 45px;
-  text-decoration: none;
+  padding-top: 27px;
+  padding-bottom: 45px;
+  text-decoration: ;
 }
 h3 a {
   color: black;
@@ -88,9 +164,10 @@ body {
   margin: 0px;
 }
 
-.container {
-  font-family: 'Inter';
-  margin: 65px auto;
+.container1 {
+  display: block;
+  font-family: 'Gilroy-Bold';
+  margin: 35px auto;
   width: 100%;
   max-width: 560px;
   min-height: 300px;
@@ -98,15 +175,11 @@ body {
   padding: 40px;
   box-sizing: border-box;
   overflow: auto;
+  box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.25);
 }
 
-/*.form {
-    margin: 65px auto;
-    width: 100%;
-    max-width: 560px;
-    min-height: 300px;
-    background-color: rgba(255,255,255,1);
-    padding: 40px;
-    box-sizing: border-box;
-    overflow: auto;
-}*/
+body {
+  font-family: 'Gilroy-Bold';
+  margin: 0;
+  overflow: hidden;
+}
