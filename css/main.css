@@ -3,15 +3,6 @@
 	src: url("../fonts/Gilroy-Bold.ttf") format("truetype"); 
 	font-style: normal; 
 	font-weight: normal; 
-} 
-
-header {
-	background-color: rgb(240, 240, 10);
-	display: flex;
-	filter: drop-shadow(6px 6px 10px rgba(0, 0, 0, 0.10));
-	position: fixed;
-	top: 0;
-	width: 100%
 }
 
 body {
@@ -20,34 +11,61 @@ body {
 	overflow: hidden;
 }
 
+header {
+	background-color: #FFEE32;
+	/*display: flex;*/
+	/*filter: drop-shadow(6px 6px 10px rgba(0, 0, 0, 0.10));*/
+	position: fixed;
+	top: 0;
+	width: 100%;
+	padding: 14px;
+}
+
+.row {
+    width: 100%;
+    max-width: 1360px;
+    padding: 0 50px;
+    margin: 0 auto;
+    display: block;
+}
+
+.headerFlex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .logo {
-	padding-top: 17px;
+	display: inline-block;
+    vertical-align: middle;
+/*	padding-top: 17px;
 	padding-bottom: 18px;
 	padding-left: 30px;
-	margin-right: 300px;
-}
-
-a {
-
-	margin-right: 30px;
-}
-
-header a {
-	color: black;
+	margin-right: 300px;*/
 }
 
 .menu li a {
+	color: black;
+	margin-right: 30px;
 	display: flex;
-	text-transform: uppercase;
-	text-decoration: underline;
-	font-size: 14px;
+	text-transform: none;
+	text-decoration: none;
+	font-size: 16px;
 	margin-left: auto;
+	transition-duration: 0.4s;
+}
+
+.menu li a:hover {
+	color: rgba(0, 0, 0, 0.50);
 }
 
 .menu li {
 	margin-right: 30px;
-	display: flex;
 	float: right;
+	display: inline-block;
+    vertical-align: middle;
+    position: relative;
 }
 
 .menu {
@@ -68,21 +86,18 @@ div {
 	padding-left: 11px;
 }
 
-.tel {
+/*.tel {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	padding-left: 0;
-}
-
-.about {
-	margin: 0;
-	height: 100%;
-}
+}*/
 
 .catalogButton {
+	justify-content: center;
+	text-align: center;
 	color: black;
-	margin-top: 20%;
+	margin-top: 0px;
 	font-size: 1.5rem;
 }
 
@@ -113,3 +128,45 @@ div {
 	color: black;
 }
 
+.about {
+	position: relative;
+	top: 0;
+	left: 0;
+    position: flex;
+    height: 650px;
+    background-color: #000;
+    margin-top: 103px;
+}
+
+.about:before {
+    content: "";
+    background-color: rgba(0,0,0,.3);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    display: flex;
+}
+
+.about video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-text {
+	position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    height: 100%;
+}
+
+h1 {
+    max-width: 630px;
+    font-size: 64px;
+    line-height: 71px;
+    text-transform: uppercase;
+    margin-bottom: 22px;
+}
