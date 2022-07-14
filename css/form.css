@@ -103,9 +103,9 @@ p {
 }
 
 input[type=text], select, textarea {
-  width: 100%;
   height: 56px;
-  /*padding-left: 0px;*/
+  padding-left: 2%;
+  padding-right: 2%;
   border: 1px solid #000;
   border-radius: 33px;
   margin-top: 10px;
@@ -113,18 +113,11 @@ input[type=text], select, textarea {
   font-family: 'Gilroy-Light';
   font-size: 15px;
   resize: vertical; /* Allow the user to vertically resize the textarea (not horizontally) */
-}
-
-::placeholder {
-  padding-left: 21px;
-}
-
-::textarea {
-  padding-left: 21px;
-}
-
-input {
   width: 100%;
+  padding: 12px 20px;
+  margin: 8px 32;
+  box-sizing: border-box;
+  background-color: white;
 }
 
 button[type=submit] {
@@ -143,6 +136,7 @@ button[type=submit] {
   border-radius: 33px;
   cursor: pointer;
   box-sizing: border-box;
+  transition-duration: 0.4s;
 }
 
 /* When moving the mouse over the submit button, add a darker green color */
@@ -153,7 +147,7 @@ button[type=submit]:hover {
 h3 {
   padding-top: 27px;
   padding-bottom: 45px;
-  text-decoration: ;
+  text-decoration: none;
 }
 h3 a {
   color: black;
@@ -181,5 +175,4 @@ body {
 body {
   font-family: 'Gilroy-Bold';
   margin: 0;
-  overflow: hidden;
 }
