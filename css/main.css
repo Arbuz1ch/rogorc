@@ -29,7 +29,6 @@
 body {
 	font-family: 'Gilroy-Bold';
 	margin: 0;
-	overflow: hidden;
 }
 
 header {
@@ -107,17 +106,12 @@ div {
 	padding-left: 11px;
 }
 
-/*.tel {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	padding-left: 0;
-}*/
-
-/*.catalogButton {
+.upbutton {
 	justify-content: center;
 	text-align: center;
+	color: black;
 	margin-top: 0px;
+	font-size: 1.5rem;
     position: relative;
     left: 50%;
     transform: translate(-50%, 0); 
@@ -126,6 +120,7 @@ div {
     height: 62px;
     background-color: #FFEE32;
     font-family: 'Gilroy-Bold';
+    font-style: bold;
     color: black;
     padding-left: 0px;
     padding-right: 0px;
@@ -133,8 +128,12 @@ div {
     border-radius: 33px;
     cursor: pointer;
     box-sizing: border-box;
-    transition: all 0.4s ease;
-}*/
+    transition-duration: 0.4s;
+}
+
+.upbutton:hover {
+    color: rgba(0, 0, 0, 0.50);
+}
 
 .catalogButton {
 	position: relative;
@@ -180,15 +179,6 @@ div {
 
 .screen.scrollup {
 	margin-top: +100vh;
-}
-
-.lovemessage {
-	font-size: 60px;
-}
-
-.upbutton {
-	font-size: 40px;
-	color: black;
 }
 
 .about {

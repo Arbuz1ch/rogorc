@@ -57,7 +57,7 @@
 		</div>
 	</div> -->
 
-	<div class="screen">
+	<div class="screen" id="screen0">
 
 		<div class="about">
 			<video src="../vid/about.mp4" loop="" muted="" autoplay="" playsinline=""></video>
@@ -65,7 +65,7 @@
 				<div class="row">
 					<p class="sweet">Самая вкусная еда в Батуми</p>
 					<p class="text">Домашняя и вкусная украинская кухня с доставкой по всему городу</p>
-					<button href="#" class="catalogButton">Каталог</button>
+					<button href="#screen1" class="catalogButton">Каталог</button>
 				</div>
 				
 			</div>
@@ -76,9 +76,7 @@
 
 	</div>
 
-	<div class="screen">
-		<h1 class="lovemessage">Тут должен быть Каталог</h1>
-
+	<div class="screen" id="screen1">
 		<div class="row">
 			<div class="catalog">
 
@@ -114,9 +112,10 @@
 			</div>		
 		</div>
 
-		<a href="#" class="upbutton">Наверх</a>
+		<button href="#screen0" class="upbutton">Наверх</button>
 	</div>
 
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<script src="../js/main.js"></script>
 </body>
 </html>
