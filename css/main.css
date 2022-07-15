@@ -276,16 +276,56 @@ p {
 	transform: scale(1.03);
 }
 
+.tovarType {
+	padding-top: 27px;
+	font-family: 'Gilroy-Bold';
+    display: table;
+    cursor: default;
+    font-size: 13px;
+    color: #4a4a4a;
+    margin: 0 auto 5px;
+    text-transform: lowercase;
+}
+
 .nameTovar {
+	line-height: 10px;
     text-align: center;
-    font-size: 16px;
-    margin-bottom: 25px;
+    font-size: 20px;
     max-height: 67px;
-    overflow: hidden;
     text-transform: uppercase;
+    cursor: pointer;
+}
+
+.descrition {
+	font-family: 'Gilroy-Bold';
+    display: table;
+    cursor: default;
+    font-size: 13px;
+    color: #4a4a4a;
+    margin: 0 auto 5px;
+    text-transform: lowercase;
 }
 
 .catalog {
 	margin-top: 10vh;
     flex-wrap: wrap;
+}
+
+.buyButton {
+	justify-content: center;
+	float: right;
+	display: block;
+    background-color: #202020;
+    color: #fff;
+    background-image: url(../img/basket.svg);
+    background-repeat: no-repeat;
+    background-size: 1rem;
+    padding: 10px 15px 10px 40px;
+    border-radius: 30px;
+    background-position: 15px;
+    transition: all 5s ease;
+    position: relative;
+    backface-visibility: hidden;
+    /*transform: translateZ(0);*/
+    cursor: pointer;
 }
