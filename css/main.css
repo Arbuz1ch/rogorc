@@ -113,8 +113,8 @@ div {
 	margin-top: 0px;
 	font-size: 1.5rem;
     position: relative;
-    /*left: 50%;
-    transform: translate(-50%, 0); */
+    left: 50%;
+    transform: translate(-50%, 0); 
     font-size: 15px;
     width: 25%;
     height: 62px;
@@ -126,10 +126,13 @@ div {
     cursor: pointer;
     box-sizing: border-box;
     transition-duration: 0.4s;
+    transition: all 0.4s ease;
 }
 
 .upbutton:hover {
-    color: rgba(0, 0, 0, 0.50);
+    color: black;
+    background-color: white;
+    box-shadow: 0px 0px 20px white;
 }
 
 .catalogButton {
@@ -151,6 +154,7 @@ div {
     transition: all 0.4s ease;
     cursor: pointer;
     width: 25%;
+    min-width: 175px;
     box-sizing: border-box;
 }
 
@@ -161,9 +165,10 @@ div {
 }
 
 .screen {
+	margin-bottom: 80px;
 	flex-wrap: wrap;
-	/*display: flex;
-  	flex-direction: column;*/
+	display: flex;
+  	justify-content: space-between;
     align-items: center;
   	justify-content: center;
 	height: 100vh;
@@ -330,4 +335,30 @@ p {
 	border-color: black;
 	background-color: black;
 	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.12);
+}
+
+@media screen and (max-width: 1200px) {
+	.container {
+	}
+}
+
+@media screen and (max-width: 1199px) {
+	.container {
+	}
+}
+
+@media screen and (max-width: 991px) {
+	.container {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.container {
+	}
+}
+
+@media screen and (max-width: 575px) {
+	.container {
+	}
 }
