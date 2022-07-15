@@ -33,7 +33,7 @@ body {
 
 header {
 	background-color: #FFEE32;
-	/*display: flex;*/
+	display: flex;
 	/*filter: drop-shadow(6px 6px 10px rgba(0, 0, 0, 0.10));*/
 	position: fixed;
 	top: 0;
@@ -357,6 +357,13 @@ p {
 @media screen and (max-width: 991px) {
 	.container {
 		display: none;
+	}
+	.row {
+		padding: 0 20px;
+		/*padding: 0px 0px 0px 0px;*/
+	}
+	.cardBox {
+		width: calc(100vw - 40px);
 	}
 }
 
