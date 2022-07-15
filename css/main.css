@@ -46,6 +46,7 @@ header {
     width: 100%;
     max-width: 1360px;
     padding: 0 50px;
+    /*padding-left: 50px;*/
     margin: 0 auto;
     display: block;
 }
@@ -263,6 +264,7 @@ p {
     margin-bottom: 80px;
     transition: all .1s ease-out;
     box-sizing: border-box;
+    overflow: hidden;
 }
 
 .cardBox:hover {
@@ -301,7 +303,11 @@ p {
 }
 
 .catalog {
+	max-width: 1203px;
+	width: 100%;
 	justify-content: space-between;
+	display: flex;
+    flex-wrap: wrap;
 	margin-top: 10vh;
     flex-wrap: wrap;
 }
