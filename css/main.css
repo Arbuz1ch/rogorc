@@ -75,11 +75,11 @@ header {
 	text-decoration: none;
 	font-size: 16px;
 	margin-left: auto;
-	transition-duration: 0.4s;
+	transition: all 0.4s ease;
 }
 
 .menu li a:hover {
-	color: rgba(0, 0, 0, 0.50);
+	color: rgba(0, 0, 0, 0.30);
 }
 
 .menu li {
@@ -114,7 +114,7 @@ div {
 	padding-left: 0;
 }*/
 
-.catalogButton {
+/*.catalogButton {
 	justify-content: center;
 	text-align: center;
 	margin-top: 0px;
@@ -126,7 +126,6 @@ div {
     height: 62px;
     background-color: #FFEE32;
     font-family: 'Gilroy-Bold';
-    font-style: bold;
     color: black;
     padding-left: 0px;
     padding-right: 0px;
@@ -134,11 +133,35 @@ div {
     border-radius: 33px;
     cursor: pointer;
     box-sizing: border-box;
-    transition-duration: 0.4s;
+    transition: all 0.4s ease;
+}*/
+
+.catalogButton {
+	position: relative;
+    left: 50%;
+    transform: translate(-50%, 0); 
+	justify-content: center;
+	font-family: 'Gilroy-Bold';
+	border: 1px solid #fff;
+	background-color: transparent;
+    border-radius: 152px;
+    font-size: 20px;
+    line-height: 19px;
+    color: white;
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 29px 43px;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    width: 25%;
+    box-sizing: border-box;
 }
 
 .catalogButton:hover {
-    color: rgba(0, 0, 0, 0.50);
+    color: black;
+    background-color: white;
+    box-shadow: 0px 0px 20px white;
 }
 
 .screen {
@@ -232,4 +255,37 @@ p {
     line-height: 23px;
     color: #fff;
     margin-bottom: 124px;
+}
+
+.cardBox {
+	margin-right: 80px;
+	background-color: #fafafa;
+    width: 370px;
+    padding: 30px;
+    height: 582px;
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    margin-bottom: 80px;
+    transition: all .1s ease-out;
+    box-sizing: border-box;
+}
+
+.cardBox:hover {
+	box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.08);
+	transform: scale(1.03);
+}
+
+.nameTovar {
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 25px;
+    max-height: 67px;
+    overflow: hidden;
+    text-transform: uppercase;
+}
+
+.catalog {
+	margin-top: 10vh;
+    flex-wrap: wrap;
 }
