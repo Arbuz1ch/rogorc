@@ -113,17 +113,14 @@ div {
 	margin-top: 0px;
 	font-size: 1.5rem;
     position: relative;
-    left: 50%;
-    transform: translate(-50%, 0); 
+    /*left: 50%;
+    transform: translate(-50%, 0); */
     font-size: 15px;
     width: 25%;
     height: 62px;
     background-color: #FFEE32;
     font-family: 'Gilroy-Bold';
-    font-style: bold;
     color: black;
-    padding-left: 0px;
-    padding-right: 0px;
     border: none;
     border-radius: 33px;
     cursor: pointer;
@@ -164,12 +161,13 @@ div {
 }
 
 .screen {
-	display: flex;
-  	flex-direction: column;
+	flex-wrap: wrap;
+	/*display: flex;
+  	flex-direction: column;*/
     align-items: center;
   	justify-content: center;
 	height: 100vh;
-	width: 100vw;
+	width: 100%;
 	transition: margin 0.5s ease-out;
 }
 
@@ -248,7 +246,7 @@ p {
 }
 
 .cardBox {
-	margin-right: 80px;
+	/*margin-right: 80px;*/
 	background-color: #fafafa;
     width: 370px;
     padding: 30px;
@@ -297,14 +295,17 @@ p {
 }
 
 .catalog {
+	justify-content: space-between;
 	margin-top: 10vh;
     flex-wrap: wrap;
 }
 
 .buyButton {
-	justify-content: center;
-	float: right;
-	display: block;
+	font-family: 'Gilroy-Bold';
+	text-transform: uppercase;
+	/*justify-content: center;*/
+	/*float: right;*/
+	/*display: block;*/
     background-color: #202020;
     color: #fff;
     background-image: url(../img/basket.svg);
@@ -314,8 +315,19 @@ p {
     border-radius: 30px;
     background-position: 15px;
     transition: all 5s ease;
-    position: relative;
-    backface-visibility: hidden;
+    position: absolute;
+    right: 0px;
+    margin: 30px;
+    bottom: 0px;
+    /*backface-visibility: hidden;*/
     /*transform: translateZ(0);*/
     cursor: pointer;
+    box-sizing: border-box;
+    transition: all 0.4s ease;
+}
+
+.buyButton:hover {
+	border-color: black;
+	background-color: black;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.12);
 }
