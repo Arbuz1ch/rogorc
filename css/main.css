@@ -310,7 +310,7 @@ div {
 }
 
 p {
-	margin: 0 0 10px;
+	/*margin: 0 0 10px;*/
 	letter-spacing: .18px;
 	display: block;
     margin-block-start: 1em;
@@ -513,6 +513,7 @@ footer {
 		justify-content: normal;
 		margin: 0 auto;
 	}
+
 	.container {
 		display: none;
 	}
@@ -544,6 +545,30 @@ footer {
 @media screen and (max-width: 767px) {
 	.cardBox {
 		width: calc(100vw - 40px);
+		margin-right: 0px;
+	}
+	.row {
+		/*left: 0;
+		right: 0;*/
+		padding: 0 0px;
+		margin: 0 auto;
+		/*padding: 0px 0px 0px 0px;*/
+	}
+	.sweet {
+		max-width: 767px;
+		text-align: center;
+		font-size: 44px;
+    	margin: 0 0 0px;
+	}
+	.text {
+		text-align: center;
+	}
+	.about-text {
+    	z-index: 2;
+    	display: flex;
+    	align-items: center;
+    	color: #fff;
+    	height: 100%;
 	}
 }
 
