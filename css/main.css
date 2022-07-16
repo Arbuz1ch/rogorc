@@ -39,7 +39,8 @@ header {
 	top: 0;
 	width: 100%;
 	padding: 14px;
-    z-index: 99999;
+    z-index: 3;
+    justify-content: center;
 }
 
 .row {
@@ -49,6 +50,7 @@ header {
     /*padding-left: 50px;*/
     margin: 0 auto;
     display: block;
+    padding: 0 20px;
 }
 
 .headerFlex {
@@ -91,6 +93,10 @@ header {
 
 .menu {
 	display: flex;
+}
+
+.menuButton {
+	display: none;
 }
 
 div {
@@ -166,11 +172,11 @@ div {
 }
 
 .screen {
-	margin-bottom: 80px;
+	/*margin-bottom: 80px;*/
 	flex-wrap: wrap;
 	display: flex;
   	flex-direction: row;
-  	justify-content: space-between;
+  	/*justify-content: space-between;*/
     align-items: center;
   	justify-content: center;
 	height: 100vh;
@@ -190,7 +196,6 @@ div {
 	position: relative;
 	top: 0;
 	left: 0;
-    /*position: flex;*/
     height: 834px;
     background-color: #000;
     margin-top: 103px;
@@ -244,6 +249,14 @@ p {
     margin: 0 0 10px;
 }
 
+.sweetCatalog {
+    font-size: 64px;
+    line-height: 71px;
+    text-transform: uppercase;
+    box-sizing: border-box;
+    text-align: center;
+}
+
 .text {
 	font-family: 'Gilroy-Light';
     font-size: 24px;
@@ -253,7 +266,6 @@ p {
 }
 
 .cardBox {
-	/*margin-right: 80px;*/
 	background-color: #fafafa;
     width: 370px;
     padding: 30px;
@@ -303,13 +315,15 @@ p {
 }
 
 .catalog {
+	margin-left: auto;
+	margin-right: auto;
+	position: static;
 	max-width: 1203px;
 	width: 100%;
-	justify-content: space-between;
+	justify-content: space-around;
 	display: flex;
     flex-wrap: wrap;
 	margin-top: 10vh;
-    flex-wrap: wrap;
 }
 
 .buyButton {
@@ -345,16 +359,28 @@ p {
 }
 
 @media screen and (max-width: 1200px) {
-	.container {
+	.catalog {
+		max-width: 1203px;
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 	}
 }
 
 @media screen and (max-width: 1199px) {
 	.container {
 	}
+	.cardBox {
+		width: calc(100vw - 40px);
+		max-width: 540px;
+	}
 }
 
 @media screen and (max-width: 991px) {
+	header {
+		justify-content: normal;
+	}
 	.container {
 		display: none;
 	}
@@ -362,13 +388,16 @@ p {
 		padding: 0 20px;
 		/*padding: 0px 0px 0px 0px;*/
 	}
-	.cardBox {
-		width: calc(100vw - 40px);
+	.menuButton {
+		display: inline-block;
+		position: absolute;
+		left: calc(100vw - 15%);
 	}
 }
 
 @media screen and (max-width: 767px) {
-	.container {
+	.cardBox {
+		width: calc(100vw - 40px);
 	}
 }
 
