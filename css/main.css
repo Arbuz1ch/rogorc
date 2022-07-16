@@ -106,7 +106,6 @@ body {
 header {
 	background-color: #FFEE32;
 	display: flex;
-	/*filter: drop-shadow(6px 6px 10px rgba(0, 0, 0, 0.10));*/
 	position: fixed;
 	top: 0;
 	width: 100%;
@@ -118,8 +117,6 @@ header {
 .row {
     width: 100%;
     max-width: 1360px;
-    padding: 0 50px;
-    /*padding-left: 50px;*/
     margin: 0 auto;
     display: block;
     padding: 0 20px;
@@ -332,7 +329,7 @@ p {
 }
 
 .sweetCatalog {
-	margin-top: 10%;
+	margin-top: 5%;
     font-size: 64px;
     line-height: 71px;
     text-transform: uppercase;
@@ -512,13 +509,18 @@ footer {
 
 @media screen and (max-width: 991px) {
 	header {
+		width: 100vw;
 		justify-content: normal;
+		margin: 0 auto;
 	}
 	.container {
 		display: none;
 	}
 	.row {
+		/*left: 0;
+		right: 0;*/
 		padding: 0 20px;
+		margin: 0 auto;
 		/*padding: 0px 0px 0px 0px;*/
 	}
 	.cardBox {
@@ -529,8 +531,8 @@ footer {
 	}
 	.menuButton {
 		display: inline-block;
-		position: absolute;
-		left: calc(100vw - 15%);
+		/*position: absolute;
+		left: calc(100vw - 25%);*/
 	}
 
 	footer {
