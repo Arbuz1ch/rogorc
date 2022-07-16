@@ -179,7 +179,19 @@ div {
   	/*justify-content: space-between;*/
     align-items: center;
   	justify-content: center;
-	height: 100vh;
+	height: 937px;
+	width: 100%;
+	transition: margin 0.5s ease-out;
+}
+
+.screen2 {
+	/*margin-bottom: 80px;*/
+	flex-wrap: wrap;
+	display: flex;
+  	flex-direction: row;
+  	/*justify-content: space-between;*/
+    align-items: center;
+  	justify-content: center;
 	width: 100%;
 	transition: margin 0.5s ease-out;
 }
