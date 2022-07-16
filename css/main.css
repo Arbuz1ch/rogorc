@@ -52,11 +52,11 @@ body {
 }
 
 .loader-inner {
-  vertical-align: top;
-  display: inline-block;
-  width: 100%;
-  background-color: #fff;
-  animation: loader-inner 2s infinite ease-in;
+  	vertical-align: top;
+  	display: inline-block;
+  	width: 100%;
+  	background-color: #fff;
+  	animation: loader-inner 2s infinite ease-in;
 }
 
 @keyframes loader {
@@ -398,6 +398,7 @@ p {
 }
 
 .catalog {
+	align-items: s;
 	margin-left: auto;
 	margin-right: auto;
 	position: static;
@@ -422,6 +423,7 @@ p {
     background-size: 1rem;
     padding: 10px 15px 10px 40px;
     border-radius: 30px;
+    border-color: #202020;
     background-position: 15px;
     transition: all 5s ease;
     position: absolute;
@@ -462,6 +464,8 @@ footer {
 }
 
 .footerDiv {
+	/*align-items: center;*/
+	/*justify-content: center;*/
 	display: flex;
 	flex-direction: column;
 }
@@ -501,8 +505,8 @@ footer {
 	.container {
 	}
 	.cardBox {
-		width: calc(100vw - 40px);
-		max-width: 540px;
+		margin-right: 30px;
+    	margin-left: 0;
 	}
 }
 
@@ -516,6 +520,12 @@ footer {
 	.row {
 		padding: 0 20px;
 		/*padding: 0px 0px 0px 0px;*/
+	}
+	.cardBox {
+		width: calc(100vw - 40px);
+		max-width: 540px;
+		margin-right: 13px;
+    	margin-left: 0;
 	}
 	.menuButton {
 		display: inline-block;
