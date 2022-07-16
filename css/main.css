@@ -179,7 +179,7 @@ div {
   	/*justify-content: space-between;*/
     align-items: center;
   	justify-content: center;
-	height: 937px;
+	height: 753px;
 	width: 100%;
 	transition: margin 0.5s ease-out;
 }
@@ -208,7 +208,7 @@ div {
 	position: relative;
 	top: 0;
 	left: 0;
-    height: 834px;
+    height: 650px;
     background-color: #000;
     margin-top: 103px;
     width: 100vw;
