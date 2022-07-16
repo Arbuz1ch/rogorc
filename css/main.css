@@ -504,10 +504,10 @@ footer {
 @media screen and (max-width: 1199px) {
 	.container {
 	}
-	.cardBox {
+	/*.cardBox {
 		margin-right: 30px;
     	margin-left: 0;
-	}
+	}*/
 }
 
 @media screen and (max-width: 991px) {
