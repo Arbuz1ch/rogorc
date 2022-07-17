@@ -53,7 +53,6 @@
  	let name = FORM.elements['name'].value;
 	let select = FORM.elements['select'].value;
  	let number = FORM.elements['number'].value;
- 	let comment = FORM.elements['comment'].value; 	
 	let adress = FORM?.elements['adress']?.value;
 
 	if (adress == undefined) {
@@ -65,14 +64,13 @@
 		select: select,
  		number: number,
  		adress: adress,
- 		comment: comment
  	});
 
  	console.log(data);
 
  	let parsedData = JSON.parse(data);
 
- 	const message = `${parsedData.name},${parsedData.select}, ${parsedData.number}, ${parsedData.adress}, ${parsedData.comment}`;
+ 	const message = `${parsedData.name},${parsedData.select}, ${parsedData.number}, ${parsedData.adress}`;
 
  	sendMessage(message);
 
