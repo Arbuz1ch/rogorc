@@ -447,7 +447,7 @@ footer {
 	justify-content: center;
 	height: 269px;
 	width: 100%;
-	padding-bottom: 14px;
+	/*padding-bottom: 14px;*/
 	background-color: #0D0D0E;
 	border-bottom: 20px solid #000;
 }
@@ -583,9 +583,9 @@ footer {
 		margin-right: 13px;
     	margin-left: 13px;
 	}
-	header {
+	/*header {
 		justify-content: center;
-	}
+	}*/
 }
 
 @media screen and (max-width: 991px) {
@@ -619,6 +619,14 @@ footer {
 	.footerDiv {
 		margin-bottom: 20px;
 	}
+	.footerText {
+    	margin-left: 0px;
+    	text-align: center;
+  	}
+  	.footerPrefix {
+    	margin-left: 0px;
+    	text-align: center;
+  	}
 }
 
 @media screen and (max-width: 767px) {

@@ -196,7 +196,7 @@ input[type=text], select, textarea {
   resize: vertical; /* Allow the user to vertically resize the textarea (not horizontally) */
   width: 100%;
   padding: 12px 20px;
-  margin: 8px 32;
+  /*margin: 8px 32;*/
   box-sizing: border-box;
   background-color: white;
 }
@@ -292,7 +292,6 @@ footer {
   footer {
     height: 369px;
     display: flex;
-    /*flex-wrap: wrap;*/
     flex-direction: column;
   }
 
@@ -302,5 +301,13 @@ footer {
 
   .footerDiv {
     margin-bottom: 20px;
+  }
+  .footerText {
+    margin-left: 0px;
+    text-align: center;
+  }
+  .footerPrefix {
+    margin-left: 0px;
+    text-align: center;
   }
 }
