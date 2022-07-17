@@ -109,7 +109,8 @@ header {
 	position: fixed;
 	top: 0;
 	width: 100%;
-	padding: 14px;
+	padding-top: 14px;
+  	padding-bottom: 14px;
     z-index: 3;
     justify-content: center;
 }
