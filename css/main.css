@@ -44,7 +44,7 @@ body {
 	display: flex;
 	height: 100%;
 	width: 100%;
-	position: absolute;
+	position: fixed;
 	top: 0;
 	left: 0;
 	background-color: black;
@@ -329,6 +329,14 @@ p {
     margin: 0 0 10px;
 }
 
+.text {
+	font-family: 'Gilroy-Light';
+    font-size: 24px;
+    line-height: 23px;
+    color: #fff;
+    margin-bottom: 124px;
+}
+
 .sweetCatalog {
 	margin-top: 5%;
     font-size: 64px;
@@ -336,14 +344,6 @@ p {
     text-transform: uppercase;
     box-sizing: border-box;
     text-align: center;
-}
-
-.text {
-	font-family: 'Gilroy-Light';
-    font-size: 24px;
-    line-height: 23px;
-    color: #fff;
-    margin-bottom: 124px;
 }
 
 .cardBox {
@@ -361,7 +361,7 @@ p {
 }
 
 .cardBox:hover {
-	box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.08);
+	box-shadow: 0px 0px 20px rgba(0,0,0,0.08);
 	transform: scale(1.03);
 }
 
@@ -438,7 +438,7 @@ p {
 .buyButton:hover {
 	border-color: black;
 	background-color: black;
-	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.12);
+	box-shadow: 0px 0px 10px rgba(0,0,0,0.12);
 }
 
 footer {
@@ -480,6 +480,73 @@ footer {
 	color: #bfbfbf;
 }
 
+.socials {
+	display: none;
+	width: 100%;
+	height: 45px;
+	position: fixed;
+	bottom: 0;
+	background-color: #000;
+	z-index: 4;
+}
+
+.socBtn {
+	font-family: 'Gilroy-Bold';
+	background-color: transparent;
+	border: none;
+    color: white;
+    display: inline-flex;
+    align-items: center;
+    font-size: 12px;
+    line-height: 45px;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.socBtn:hover {
+	opacity: 50%;
+}
+
+.socialsArrow {
+	margin-left: 8px;
+	color: #fff;
+}
+
+.modal {
+  	display: none; /* Hidden by default */
+  	position: fixed; /* Stay in place */
+  	z-index: 4; /* Sit on top */
+  	left: 0;
+  	top: 0;
+  	width: 100%; /* Full width */
+  	height: 100%; /* Full height */
+  	overflow: none; /* Enable scroll if needed */
+  	background-color: rgba(0,0,0,0.5); /* Black w/ opacity */
+}
+
+.modal-content {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+  	background-color: #fefefe;
+  	margin: 15% auto; /* 15% from the top and centered */
+  	padding: 20px;
+  	border: 1px solid #888;
+  	width: 75%; /* Could be more or less, depending on screen size */
+  	animation-name: animateSocials;
+  	animation-duration: 0.5s;
+}
+
+.close {
+	display: none;
+}
+
+@keyframes animateSocials {
+  from {top: -500px; opacity: 0}
+  to {top: 0; opacity: 1}
+}
+
 @media screen and (max-width: 1200px) {
 	.catalog {
 		max-width: 1203px;
@@ -499,22 +566,29 @@ footer {
 	}
 }
 
-@media screen and (max-width: 1199px) {
+@media screen and (max-width: 1200px) {
 	.container {
 	}
 	/*.cardBox {
 		margin-right: 30px;
     	margin-left: 0;
 	}*/
+	.socials {
+		display: flex;
+	}
+	.cardBox {
+		width: calc(45vw - 40px);
+		max-width: 540px;
+		min-width: 310px;
+		margin-right: 13px;
+    	margin-left: 13px;
+	}
+	header {
+		justify-content: center;
+	}
 }
 
 @media screen and (max-width: 991px) {
-	header {
-		width: 100vw;
-		justify-content: normal;
-		margin: 0 auto;
-	}
-
 	.container {
 		display: none;
 	}
@@ -525,12 +599,6 @@ footer {
 		margin: 0 auto;
 		/*padding: 0px 0px 0px 0px;*/
 	}
-	.cardBox {
-		width: calc(100vw - 40px);
-		max-width: 540px;
-		margin-right: 13px;
-    	margin-left: 0;
-	}
 	.menuButton {
 		display: inline-block;
 		/*position: absolute;
@@ -538,8 +606,18 @@ footer {
 	}
 
 	footer {
+		height: 369px;
 		display: flex;
-		flex-wrap: wrap;
+		/*flex-wrap: wrap;*/
+		flex-direction: column;
+	}
+
+	.footerLogo {
+		margin-bottom: 20px;
+	}
+
+	.footerDiv {
+		margin-bottom: 20px;
 	}
 }
 
@@ -547,21 +625,21 @@ footer {
 	.cardBox {
 		width: calc(100vw - 40px);
 		margin-right: 0px;
+		margin-left: 0px;
 	}
 	.row {
-		/*left: 0;
-		right: 0;*/
 		padding: 0 0px;
 		margin: 0 auto;
-		/*padding: 0px 0px 0px 0px;*/
 	}
 	.sweet {
+		/*width: 80%;*/
 		max-width: 767px;
 		text-align: center;
 		font-size: 44px;
-    	margin: 0 0 0px;
+
 	}
 	.text {
+		/*width: 80%;*/
 		text-align: center;
 	}
 	.about-text {
@@ -570,6 +648,7 @@ footer {
     	align-items: center;
     	color: #fff;
     	height: 100%;
+    	width: 85%;
 	}
 }
 

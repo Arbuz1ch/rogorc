@@ -14,9 +14,7 @@
 	</div>
 
 	<header>
-
 		<div class="raw">
-
 			<div class="headerFlex">
 
 				<div class="logo">
@@ -48,16 +46,27 @@
 					</ul>
 				</div>
 
-				<div class="menuButton">
+				<!-- <div class="menuButton">
 					<img src="../img/menu.svg" alt="">
-				</div>
-				
-			</div>
-			
-		</div>
+				</div> -->
 
-			<!-- <a href="tel:577203713" class="tel">+995 (577) 20 37 13</a> -->
+			</div>
+		</div>
 	</header>
+
+	<div class="socials">
+		<button class="socBtn" id="socBtn">
+			Написать нам<img src="../img/socialsArrow.svg" class="socialsArrow">
+		</button>
+	</div>
+
+	<div id="socialsModal" class="modal">
+  		<div class="modal-content">
+    		<span class="close">&times;</span>
+    		<a href="">WhatsApp</a>
+    		<a href="">Telegram</a>
+  		</div>
+	</div>
 
 	<div class="screen" id="screen0">
 
@@ -166,8 +175,6 @@
 				
 			</div>		
 		</div>
-
-		
 	</div>
 
 	<footer>
@@ -176,11 +183,16 @@
 			<img src="../img/footerLogo.png">
 		</div>
 
-		<div class="footerText">Тут должен быть футер</div>
+		<div class="footerDiv">
+			<div class="footerPrefix">Что мы готовим?</div>
+			<div class="footerText">ВСЕ!</div>
+		</div>
+
 		<div class="footerDiv">
 			<div class="footerPrefix">Время работы:</div>
 			<div class="footerText">ПТ-ПН 10:00-21:00</div>
 		</div>
+
 		<div class="footerDiv">
 			<div class="footerPrefix">E-MAIL:</div>
 			<div class="footerText">YakVdoma@gmail.com</div>
@@ -191,6 +203,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<script src="../js/main.js"></script>
 	<script src="../js/loader.js"></script>
+	<script src="../js/socials.js"></script>
 
 </body>
 </html>

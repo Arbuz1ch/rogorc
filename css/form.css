@@ -46,7 +46,7 @@ body {
   display: flex;
   height: 100%;
   width: 100%;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   background-color: black;
@@ -286,4 +286,21 @@ footer {
   margin-left: 30px;
   font-family: 'Gilroy-Light';
   color: #bfbfbf;
+}
+
+@media screen and (max-width: 991px) {
+  footer {
+    height: 369px;
+    display: flex;
+    /*flex-wrap: wrap;*/
+    flex-direction: column;
+  }
+
+  .footerLogo {
+    margin-bottom: 20px;
+  }
+
+  .footerDiv {
+    margin-bottom: 20px;
+  }
 }
