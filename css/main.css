@@ -48,7 +48,7 @@ body {
 	top: 0;
 	left: 0;
 	background-color: black;
-	z-index: 4;
+	z-index: 5;
 }
 
 .loader-inner {
@@ -339,7 +339,7 @@ p {
 
 .sweetCatalog {
 	margin-top: 5%;
-    font-size: 64px;
+    font-size: 48px;
     line-height: 71px;
     text-transform: uppercase;
     box-sizing: border-box;
@@ -395,8 +395,44 @@ p {
     text-transform: lowercase;
 }
 
+div.scrollmenu {
+	/*width: 80%;*/
+	/*padding-left: 20px;*/
+	margin: 0 auto;
+	/*-webkit-overflow-scrolling: touch;*/
+	-ms-overflow-style: -ms-autohiding-scrollbar;
+	/*box-sizing: border-box;*/
+  	overflow-x: auto;
+  	white-space: nowrap;
+}
+
+div.scrollmenu a {
+	margin-left: 14px;
+	margin-right: 14px;
+	font-family: 'Gilroy-Medium';
+	font-size: 13px;
+	border: none;
+	border-radius: 33px;
+	background-color: #f4f4f4;
+  	display: inline-block;
+  	color: #000;
+  	text-align: center;
+  	padding: 8px 16px;
+  	line-height: 20px;
+  	text-decoration: none;
+}
+
+div.scrollmenu a:hover {
+  	background-color: #333333;
+  	color: #fff;
+}
+
+.scrollmenu::-webkit-scrollbar {
+	display: none; 
+}
+
 .catalog {
-	align-items: s;
+	/*align-items: center;*/
 	margin-left: auto;
 	margin-right: auto;
 	position: static;
@@ -447,7 +483,6 @@ footer {
 	justify-content: center;
 	height: 269px;
 	width: 100%;
-	/*padding-bottom: 14px;*/
 	background-color: #0D0D0E;
 	border-bottom: 20px solid #000;
 }
@@ -567,15 +602,10 @@ footer {
 }
 
 @media screen and (max-width: 1200px) {
-	.container {
-	}
 	/*.cardBox {
 		margin-right: 30px;
     	margin-left: 0;
 	}*/
-	.socials {
-		display: flex;
-	}
 	.cardBox {
 		width: calc(45vw - 40px);
 		max-width: 540px;
@@ -592,6 +622,9 @@ footer {
 	.container {
 		display: none;
 	}
+	.socials {
+		display: flex;
+	}
 	.row {
 		/*left: 0;
 		right: 0;*/
@@ -601,21 +634,16 @@ footer {
 	}
 	.menuButton {
 		display: inline-block;
-		/*position: absolute;
-		left: calc(100vw - 25%);*/
 	}
-
 	footer {
 		height: 369px;
 		display: flex;
 		/*flex-wrap: wrap;*/
 		flex-direction: column;
 	}
-
 	.footerLogo {
 		margin-bottom: 20px;
 	}
-
 	.footerDiv {
 		margin-bottom: 20px;
 	}
@@ -657,6 +685,9 @@ footer {
     	color: #fff;
     	height: 100%;
     	width: 85%;
+	}
+	div.scrollmenu {
+		width: 80%;
 	}
 }
 

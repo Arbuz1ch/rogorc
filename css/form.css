@@ -31,6 +31,12 @@ body {
   margin: 0;
 }
 
+div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .loader {
   display: inline-block;
   width: 30px;
