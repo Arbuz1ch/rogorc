@@ -420,6 +420,7 @@ div.scrollmenu a {
   	padding: 8px 16px;
   	line-height: 20px;
   	text-decoration: none;
+  	box-sizing: border-box;
 }
 
 div.scrollmenu a:hover {
@@ -687,7 +688,7 @@ footer {
     	width: 85%;
 	}
 	div.scrollmenu {
-		width: 80%;
+		width: 90%;
 	}
 }
 
