@@ -31,12 +31,6 @@ body {
   margin: 0;
 }
 
-div {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .loader {
   display: inline-block;
   width: 30px;
@@ -114,7 +108,7 @@ div {
 header {
   background-color: #FFEE32;
   display: flex;
-  top: 0;
+  /*top: 0;*/
   width: 100%;
   padding-top: 14px;
   padding-bottom: 14px;
@@ -122,53 +116,20 @@ header {
   justify-content: center;
 }
 
-.logo {
+/*.logo {
   display: inline-block;
   vertical-align: middle;
-/*padding-top: 17px;
-  padding-bottom: 18px;
-  padding-left: 30px;
-  margin-right: 300px;*/
-}
-.container {
+}*/
+
+/*.container {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 700px;
   padding-left: 11px;
-}
+}*/
 
-.tel {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-left: 0;
-}
-
-.about {
-  margin: 0;
-  height: 100%;
-}
-
-.menu li a {
-  display: flex;
-  text-transform: uppercase;
-  text-decoration: underline;
-  font-size: 14px;
-  margin-left: auto;
-}
-
-.menu li {
-  margin-right: 30px;
-  display: flex;
-  float: right;
-}
-
-.menu {
-  display: flex;
-}
-
-h1 {
+/*h1 {
   color: #000;
   font-family: 'Inter';
   font-size: 26px;
@@ -187,6 +148,16 @@ p {
   color: #000;
   font-size: 14px;
   text-align: center;
+}*/
+
+form {
+  max-width: 480px;
+  width: 100%;
+}
+
+label {
+  font-family: 'Gilroy-Regular';
+  font-size: 15px;
 }
 
 input[type=text], select, textarea {
@@ -195,64 +166,62 @@ input[type=text], select, textarea {
   padding-right: 2%;
   border: 1px solid #000;
   border-radius: 33px;
-  margin-top: 10px;
-  margin-bottom: 32px;
+  border-color: rgb(118, 118, 118);
+  margin-top: 7px;
+  margin-bottom: 20px;
   font-family: 'Gilroy-Light';
   font-size: 15px;
-  resize: vertical; /* Allow the user to vertically resize the textarea (not horizontally) */
+  resize: vertical;
   width: 100%;
-  padding: 12px 20px;
-  /*margin: 8px 32;*/
+  padding: 0 20px;
   box-sizing: border-box;
   background-color: white;
 }
 
 button[type=submit] {
-  font-size: 15px;
+  font-size: 14px;
   width: 100%;
   height: 62px;
-  background-color: #D62140;
+  background-color: #FFEE32;
   font-family: 'Gilroy-Bold';
   font-style: bold;
-  color: white;
-  /*padding-left: 26;*/
-  /*padding: 14px 196px;*/
-  padding-left: 0px;
-  padding-right: 0px;
+  color: #000;
   border: none;
   border-radius: 33px;
   cursor: pointer;
   box-sizing: border-box;
-  transition-duration: 0.4s;
+  transition: all 0.4s ease-out;
 }
 
 /* When moving the mouse over the submit button, add a darker green color */
 button[type=submit]:hover {
-  background-color: #45a049;
+  background-color: #fff;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
 }
 
 h3 {
-  padding-top: 27px;
-  padding-bottom: 45px;
-  text-decoration: none;
+  padding-top: 14px;
+  padding-bottom: 48px;
+  margin: 0 auto;
 }
 h3 a {
-  color: black;
+  font-family: 'Gilroy-Medium';
+  text-decoration: underline dotted;
+  color: #000;
   font-size: 14px;
 }
 
 .container1 {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-family: 'Gilroy-Bold';
-  margin: 35px auto;
+  margin: 40px auto;
   width: 100%;
   max-width: 560px;
-  min-height: 300px;
-  background-color: rgba(255,255,255,1);
   padding: 40px;
   box-sizing: border-box;
-  overflow: auto;
-  box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 0px 20px rgba(0,0,0,0.08);
 }
 
 footer {
@@ -276,35 +245,44 @@ footer {
 }
 
 .footerDiv {
-  /*align-items: center;*/
-  /*justify-content: center;*/
+    align-items: center;
+    justify-content: center;
   display: flex;
   flex-direction: column;
 }
 
 .footerPrefix {
-  margin-left: 30px;
+    margin-left: 30px;
   font-family: 'Gilroy-Light';
   color: #616060;
 }
 
 .footerText {
-  margin-left: 30px;
+    margin-left: 30px;
   font-family: 'Gilroy-Light';
   color: #bfbfbf;
 }
 
 @media screen and (max-width: 991px) {
+  form {
+    padding: 40px 0px 40px 0px;
+    border-top: 1px solid #d8d8d8!important;
+    border-bottom: 1px solid #d8d8d8!important;
+  }
+  .container1 {
+    padding: 0px 20px 0px 20px;
+    box-shadow: none;
+    /*border-bottom: 1px solid #d8d8d8!important;
+    border-top: 1px solid #d8d8d8!important;*/
+  }
   footer {
     height: 369px;
     display: flex;
     flex-direction: column;
   }
-
   .footerLogo {
     margin-bottom: 20px;
   }
-
   .footerDiv {
     margin-bottom: 20px;
   }
