@@ -1,7 +1,4 @@
- const TOKEN = '5177947153:AAFSWGOf6Zc_K009UwV28R4t9kJVz-POKZA';
- const CHAT_ID = '-635333222';
- 
- const element = document.getElementById('labelform');
+const element = document.getElementById('labelform');
 
  window.onload = () => {
 	const select = document.getElementById('select');
@@ -66,23 +63,14 @@
  		adress: adress,
  	});
 
- 	console.log(data);
+	let request = new XMLHttpRequest();
 
- 	let parsedData = JSON.parse(data);
+    request.open('POST', '/request', true);
+    request.setRequestHeader(
+        'Content-Type',
+        'application/json'
+    );
 
- 	const message = `${parsedData.name},${parsedData.select}, ${parsedData.number}, ${parsedData.adress}`;
-
- 	sendMessage(message);
-
- 	function sendMessage(message) {
-
- 		const URL = `https://api.telegram.org/bot${TOKEN}/sendMessage?chat_id=${CHAT_ID}&parse_mode=html&text=${message}`
-
- 		const request = new XMLHttpRequest();
-
- 		request.open('POST', URL, true);
- 		request.setRequestHeader('Content-type', 'application/json; charset=utf-8');
-
- 		request.send(message);
- 	};
+    request.send(data);
+	
  });
