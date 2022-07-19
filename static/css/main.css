@@ -220,7 +220,7 @@ div {
   	/*justify-content: space-between;*/
     align-items: center;
   	justify-content: center;
-	height: 100vh;
+	/*height: 100vh;*/
 	width: 100%;
 	transition: margin 0.5s ease-out;
 }
@@ -350,11 +350,12 @@ p {
 	background-color: #fafafa;
     width: 370px;
     padding: 30px;
-    height: 582px;
+    height: 482px;
     position: relative;
     display: inline-block;
     vertical-align: top;
-    margin-bottom: 80px;
+    margin-bottom: 60px;
+    margin: 0px 25px 50px 25px;
     transition: all .1s ease-out;
     box-sizing: border-box;
     overflow: hidden;
@@ -366,11 +367,10 @@ p {
 }
 
 .tovarType {
-	padding-top: 27px;
-	font-family: 'Gilroy-Bold';
+	font-family: 'Gilroy-Regular';
     display: table;
     cursor: default;
-    font-size: 13px;
+    font-size: 14px;
     color: #4a4a4a;
     margin: 0 auto 5px;
     text-transform: lowercase;
@@ -386,12 +386,13 @@ p {
 }
 
 .descrition {
-	font-family: 'Gilroy-Bold';
+	font-family: 'Gilroy-Regular';
     display: table;
     cursor: default;
-    font-size: 13px;
+    font-size: 14px;
     color: #4a4a4a;
     margin: 0 auto 5px;
+    margin-top: 5px;
     text-transform: lowercase;
 }
 
@@ -437,7 +438,7 @@ div.scrollmenu a:hover {
 	margin-left: auto;
 	margin-right: auto;
 	position: static;
-	max-width: 1203px;
+	max-width: 1260px;
 	width: 100%;
 	justify-content: space-around;
 	display: flex;
@@ -596,9 +597,9 @@ footer {
   to {top: 0; opacity: 1}
 }
 
-@media screen and (max-width: 1200px) {
+/*@media screen and (max-width: 1200px) {
 	.catalog {
-		max-width: 1203px;
+		max-width: 1260px;
 		width: 100%;
 		display: flex;
 		align-items: center;
@@ -613,9 +614,28 @@ footer {
 	.sweetCatalog {
 		margin-top: 10%;
 	}
+}*/
+
+@media screen and (max-width: 1299px) {
+	.cardBox {
+		margin-right: 0px;
+    margin-left: 0px;
+    margin-bottom: 26px;
+	}
 }
 
 @media screen and (max-width: 1200px) {
+	header {
+		padding: 0px;
+		height: 74px;
+	}
+	.logo {
+		transform: scale(0.8);
+	}
+	.about {
+		margin-top: 74px;
+		height: 100vh;
+	}
 	/*.cardBox {
 		margin-right: 30px;
     	margin-left: 0;
@@ -624,8 +644,7 @@ footer {
 		width: calc(45vw - 40px);
 		max-width: 540px;
 		min-width: 310px;
-		margin-right: 13px;
-    	margin-left: 13px;
+    margin-bottom: 60px;
 	}
 	/*header {
 		justify-content: center;
@@ -633,6 +652,16 @@ footer {
 }
 
 @media screen and (max-width: 991px) {
+	.about-text {
+    	height: 100%;
+    	width: 85%;
+	}
+	.cardBox {
+		width: calc(100vw - 40px);
+		margin-right: 0px;
+		margin-left: 0px;
+		margin-bottom: 26px;
+	}
 	.container {
 		display: none;
 	}
@@ -642,8 +671,8 @@ footer {
 	.row {
 		/*left: 0;
 		right: 0;*/
-		padding: 0 20px;
-		margin: 0 auto;
+		/*padding: 0 20px;*/
+		padding: 0 0px;
 		/*padding: 0px 0px 0px 0px;*/
 	}
 	.menuButton {
@@ -693,10 +722,8 @@ footer {
 		text-align: center;
 	}
 	.about-text {
-    	z-index: 2;
     	display: flex;
     	align-items: center;
-    	color: #fff;
     	height: 100%;
     	width: 85%;
 	}
