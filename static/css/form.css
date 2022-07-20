@@ -114,6 +114,15 @@ header {
   padding-bottom: 14px;
   z-index: 3;
   justify-content: center;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+}
+
+.logo {
+  height: 75px;
+  width: 160px;
+  display: inline-block;
+    vertical-align: middle;
 }
 
 /*.logo {
@@ -143,14 +152,20 @@ h2 {
   font-size: 14px;
   text-align: center;
 }
+*/
 
 p {
+  margin: 0px;
+  cursor: pointer;
   color: #000;
-  font-size: 14px;
-  text-align: center;
-}*/
+  font-size: 22px;
+  padding: 0px 0px 32px 0px;
+  line-height: 1.35;
+}
 
 form {
+  padding: 40px 0px 0px 0px;
+  border-top: 1px solid #d8d8d8!important;
   max-width: 480px;
   width: 100%;
 }
@@ -213,6 +228,7 @@ h3 a {
 
 .container1 {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   font-family: 'Gilroy-Bold';
@@ -263,11 +279,20 @@ footer {
   color: #bfbfbf;
 }
 
+@media screen and (max-width: 1200px) {
+  header {
+    padding: 0px;
+    height: 74px;
+  }
+  .logo {
+    transform: scale(0.8);
+}
+
 @media screen and (max-width: 991px) {
   form {
     padding: 40px 0px 40px 0px;
-    border-top: 1px solid #d8d8d8!important;
-    border-bottom: 1px solid #d8d8d8!important;
+    /*border-top: 1px solid #d8d8d8!important;*/
+    /*border-bottom: 1px solid #d8d8d8!important;*/
   }
   .container1 {
     padding: 0px 20px 0px 20px;

@@ -131,12 +131,10 @@ header {
 }
 
 .logo {
+	height: 75px;
+	width: 160px;
 	display: inline-block;
     vertical-align: middle;
-/*	padding-top: 17px;
-	padding-bottom: 18px;
-	padding-left: 30px;
-	margin-right: 300px;*/
 }
 
 .menu li a {
@@ -213,14 +211,11 @@ div {
 }
 
 .screen {
-	/*margin-bottom: 80px;*/
 	flex-wrap: wrap;
 	display: flex;
   	flex-direction: row;
-  	/*justify-content: space-between;*/
     align-items: center;
   	justify-content: center;
-	/*height: 100vh;*/
 	width: 100%;
 	transition: margin 0.5s ease-out;
 }
@@ -230,7 +225,6 @@ div {
 	flex-wrap: wrap;
 	display: flex;
   	flex-direction: row;
-  	/*justify-content: space-between;*/
     align-items: center;
   	justify-content: center;
 	width: 100%;
@@ -248,27 +242,23 @@ div {
 .upbutton {
 	justify-content: center;
 	text-align: center;
-	/*margin-top: 0px;*/
-	font-size: 1.5rem;
-    position: relative;
-    left: 50%;
-    transform: translate(-50%, 0); 
-    font-size: 15px;
-    width: 25%;
-    height: 62px;
-    background-color: #FFEE32;
-    font-family: 'Gilroy-Bold';
-    color: black;
-    border: none;
-    border-radius: 33px;
-    cursor: pointer;
-    box-sizing: border-box;
-    transition: all 0.4s ease;
+	font-size: 1.2rem;
+   position: relative;
+   left: 50%;
+   transform: translate(-50%, 0); 
+   border: none;
+   background-color: transparent;
+   width: 25%;
+   /*height: 62px;*/
+   font-family: 'Gilroy-Bold';
+   color: #000;
+   cursor: pointer;
+   transition: all 0.4s ease;
+   margin-bottom: 72px;
 }
 
 .upbutton:hover {
-    background-color: white;
-    box-shadow: 0px 0px 20px white;
+	opacity: 65%;
 }
 
 .about {
@@ -276,7 +266,6 @@ div {
 	position: relative;
 	top: 0;
 	left: 0;
-    /*height: 650px;*/
     background-color: #000;
     margin-top: 103px;
     width: 100%;
@@ -311,7 +300,6 @@ div {
 }
 
 p {
-	/*margin: 0 0 10px;*/
 	letter-spacing: .18px;
 	display: block;
     margin-block-start: 1em;
@@ -397,12 +385,9 @@ p {
 }
 
 div.scrollmenu {
-	/*width: 80%;*/
-	/*padding-left: 20px;*/
 	margin: 0 auto;
-	/*-webkit-overflow-scrolling: touch;*/
+	display: flex;
 	-ms-overflow-style: -ms-autohiding-scrollbar;
-	/*box-sizing: border-box;*/
   	overflow-x: auto;
   	white-space: nowrap;
 }
@@ -442,7 +427,7 @@ div.scrollmenu a:hover {
 	width: 100%;
 	justify-content: space-around;
 	display: flex;
-    flex-wrap: wrap;
+   flex-wrap: wrap;
 	margin-top: 72px;
 	margin-bottom: 22px;
 }
@@ -450,9 +435,6 @@ div.scrollmenu a:hover {
 .buyButton {
 	font-family: 'Gilroy-Bold';
 	text-transform: uppercase;
-	/*justify-content: center;*/
-	/*float: right;*/
-	/*display: block;*/
     background-color: #202020;
     color: #fff;
     background-image: url(../img/basket.svg);
@@ -467,8 +449,6 @@ div.scrollmenu a:hover {
     right: 0px;
     margin: 30px;
     bottom: 0px;
-    /*backface-visibility: hidden;*/
-    /*transform: translateZ(0);*/
     cursor: pointer;
     box-sizing: border-box;
     transition: all 0.4s ease;
@@ -500,8 +480,6 @@ footer {
 }
 
 .footerDiv {
-	/*align-items: center;*/
-	/*justify-content: center;*/
 	display: flex;
 	flex-direction: column;
 }
@@ -559,38 +537,53 @@ footer {
 }
 
 .modal {
-  	display: none; /* Hidden by default */
-  	position: fixed; /* Stay in place */
-  	z-index: 4; /* Sit on top */
-  	left: 0;
-  	top: 0;
-  	width: 100%; /* Full width */
-  	height: 100%; /* Full height */
-  	overflow: none; /* Enable scroll if needed */
-  	background-color: rgba(0,0,0,0.5); /* Black w/ opacity */
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  z-index: 4;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgba(0,0,0,0.85);
+  /*background-color: #fff;*/
 }
 
 .modal-content {
 	display: flex;
-	flex-wrap: wrap;
 	flex-direction: column;
-  	background-color: #fefefe;
-  	margin: 15% auto; /* 15% from the top and centered */
-  	padding: 20px;
-  	border: 1px solid #888;
-  	width: 75%; /* Could be more or less, depending on screen size */
-  	animation-name: animateSocials;
-  	animation-duration: 0.5s;
+  background-color: #fefefe;
+  padding: 20px;
+  width: 80%;
+  animation-name: animateSocials;
+  animation-duration: 0.5s;
 }
 
 .modal-content a {
-	font-size: x-large;
+	font-family: 'Gilroy-Medium';
+	font-size: 16px;
+	line-height: 24px;
 	color: black;
 	text-decoration: none;
 }
 
+.closeSocials {
+    display: flex;
+    justify-content: flex-end;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 74px;
+    background-color: #000;
+    color: #fff;
+    box-sizing: border-box;
+}
+
 .close {
-	display: none;
+	margin-right: 34px;
+	transform: scale(2.0);
 }
 
 @keyframes animateSocials {
@@ -598,24 +591,15 @@ footer {
   to {top: 0; opacity: 1}
 }
 
-/*@media screen and (max-width: 1200px) {
-	.catalog {
-		max-width: 1260px;
-		width: 100%;
-		display: flex;
-		align-items: center;
-		justify-content: center;
+@media (hover: none) {
+	.cardBox:hover {
+		box-shadow: none;
+		transform: none;
 	}
-	.screen {
-		height: 937px;
+	.upbutton:hover {
+		opacity: 100%;
 	}
-	.about {
-		height: 834px;
-	}
-	.sweetCatalog {
-		margin-top: 10%;
-	}
-}*/
+}
 
 @media screen and (max-width: 1299px) {
 	.cardBox {
@@ -679,11 +663,7 @@ footer {
 		display: flex;
 	}
 	.row {
-		/*left: 0;
-		right: 0;*/
-		/*padding: 0 20px;*/
 		padding: 0 0px;
-		/*padding: 0px 0px 0px 0px;*/
 	}
 	.menuButton {
 		display: inline-block;
@@ -691,7 +671,6 @@ footer {
 	footer {
 		height: 369px;
 		display: flex;
-		/*flex-wrap: wrap;*/
 		flex-direction: column;
 	}
 	.footerLogo {
@@ -701,16 +680,23 @@ footer {
 		margin-bottom: 20px;
 	}
 	.footerText {
-    	margin-left: 0px;
-    	text-align: center;
-  	}
-  	.footerPrefix {
-    	margin-left: 0px;
-    	text-align: center;
-  	}
+    margin-left: 0px;
+    text-align: center;
+  }
+  .footerPrefix {
+    margin-left: 0px;
+    text-align: center;
+  }
 }
 
 @media screen and (max-width: 767px) {
+	div.scrollmenu {
+		display: block;
+	}
+	div.scrollmenu a {
+		margin-left: 0px;
+		margin-right: 20px;
+	}
 	.cardBox {
 		width: calc(100vw - 40px);
 		margin-right: 0px;
@@ -721,14 +707,12 @@ footer {
 		margin: 0 auto;
 	}
 	.sweet {
-		/*width: 80%;*/
 		max-width: 767px;
 		text-align: center;
 		font-size: 44px;
 
 	}
 	.text {
-		/*width: 80%;*/
 		text-align: center;
 	}
 	.about-text {
