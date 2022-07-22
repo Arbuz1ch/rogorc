@@ -429,12 +429,13 @@ div.scrollmenu a {
 	border-radius: 33px;
 	background-color: #f4f4f4;
  	display: inline-block;
-  color: #000;
-  text-align: center;
-  padding: 8px 16px;
-  line-height: 20px;
-  text-decoration: none;
-  box-sizing: border-box;
+  	color: #000;
+  	text-align: center;
+  	padding: 8px 16px;
+  	line-height: 20px;
+  	text-decoration: none;
+  	box-sizing: border-box;
+	cursor: pointer;
 }
 
 div.scrollmenu a:hover {
@@ -753,10 +754,5 @@ footer {
 	}
 	div.scrollmenu {
 		width: 90%;
-	}
-}
-
-@media screen and (max-width: 575px) {
-	.container {
 	}
 }

@@ -9,20 +9,26 @@ async function getDataFromDatabase() {
     .then(json => jsonHandler(json));
 }   
     
-
+const ArrayofCategories = []
 
 
 function jsonHandler(json) {
 
-    let rows = json.data.rows
-
-    const ArrayofCategories = [];
+    const rows = json.data.rows
 
     for (let i = 0; i < rows.length; i++) {
         ArrayofCategories.push(rows[i].name);
     }
-    
-    console.log(ArrayofCategories);
-}
+
+    const categoryButton = document.querySelectorAll('.categoryButton');
+
+    let i = 0;
+    categoryButton.forEach((button) => {
+        button.innerHTML = `${ArrayofCategories[i]}`;
+        i++;    
+    });
+};
+
+
 
 getDataFromDatabase();
