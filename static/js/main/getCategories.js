@@ -5,30 +5,25 @@ async function getDataFromDatabase() {
     };
 
     await fetch('/categories', options)
-    .then(response => response.json())
-    .then(json => jsonHandler(json));
+        .then(response => response.json())
+        .then(json => jsonHandler(json));
 }   
-    
-const ArrayofCategories = []
-
 
 function jsonHandler(json) {
 
     const rows = json.data.rows
 
-    for (let i = 0; i < rows.length; i++) {
-        ArrayofCategories.push(rows[i].name);
-    }
+    console.log(rows);
 
     const categoryButton = document.querySelectorAll('.categoryButton');
 
     let i = 0;
     categoryButton.forEach((button) => {
-        button.innerHTML = `${ArrayofCategories[i]}`;
+        button.innerHTML = `${rows[i].name}`;
+        button.setAttribute("data-c", rows[i].id);
+        console.log(button.dataset.c);   
         i++;    
     });
 };
-
-
 
 getDataFromDatabase();
