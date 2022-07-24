@@ -21,7 +21,6 @@ function jsonHandler(json) {
     categoryButton.forEach((button) => {
         button.innerHTML = `${rows[i].name}`;
         button.setAttribute("data-c", rows[i].id);
-        console.log(button.dataset.c);   
         i++;    
     });
 };
