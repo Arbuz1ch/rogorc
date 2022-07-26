@@ -5,9 +5,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>Як Вдома | Каталог</title>
 	<link rel="stylesheet" type="text/css" href="../static/css/main.css">
+	<!-- <link rel="stylesheet" href="../static/css/shoppingCard.css"> -->
 </head>
 
-<body>
+<body id="body">
 
 	<div class="loader-wrapper">
 		<span class="loader"><span class="loader-inner"></span></span>
@@ -46,7 +47,7 @@
 			</div>
 		</div>
 		<div class="basketArea">
-			<button class="basket"></button>
+			<button class="basket" id="basket"></button>
 		</div>
 	</header>
 
@@ -190,6 +191,21 @@
 			<button href="#screen0" class="upbutton">Наверх</button>	
 		</div>
 	</div>
+	
+	<div class="shoppingCard" id="shoppingCard">
+		<div class="modalBlackout"></div>
+		<div class="modalCloseArea" id="modalCloseArea"></div>
+		<div class="modalTile">
+			<button class="continueShopping" id="continueShopping">
+				<div class="backArrow"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-left-fill" viewBox="0 0 16 16">
+  				<path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
+				</svg>
+				</div>
+				<span class="continueShoppingText">Продолжить покупки</span>
+			</button>
+			<div class="modalTitle">Мои покупки</div>
+		</div>
+	</div>
 
 	<footer>
 
@@ -218,6 +234,7 @@
 	<script src="../static/js/main/main.js"></script>
 	<script src="../static/js/loader.js"></script>
 	<script src="../static/js/main/socials.js"></script>
+	<script src="../static/js/shoppingCard.js"></script>
 
 </body>
 </html>

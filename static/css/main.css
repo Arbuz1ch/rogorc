@@ -1,29 +1,33 @@
 @font-face {
-  font-family: "Gilroy-Bold"; 
-  src: url("../fonts/Gilroy-Bold.ttf") format("truetype"); 
-  font-style: normal; 
-  font-weight: normal; 
+	font-family: "Gilroy-Bold"; 
+	src: url("../fonts/Gilroy-Bold.ttf") format("truetype"); 
+	font-style: normal; 
+	font-weight: normal; 
 }
 
 @font-face {
-  font-family: "Gilroy-Medium"; 
-  src: url("../fonts/Gilroy-Medium.ttf") format("truetype"); 
-  font-style: normal; 
-  font-weight: normal; 
+	font-family: "Gilroy-Medium"; 
+	src: url("../fonts/Gilroy-Medium.ttf") format("truetype"); 
+	font-style: normal; 
+	font-weight: normal; 
 }
 
 @font-face {
-  font-family: "Gilroy-Regular"; 
-  src: url("../fonts/Gilroy-Regular.ttf") format("truetype"); 
-  font-style: normal; 
-  font-weight: normal; 
+	font-family: "Gilroy-Regular"; 
+	src: url("../fonts/Gilroy-Regular.ttf") format("truetype"); 
+	font-style: normal; 
+	font-weight: normal; 
 }
 
 @font-face {
-  font-family: "Gilroy-Light"; 
-  src: url("../fonts/Gilroy-Light.ttf") format("truetype"); 
-  font-style: normal; 
-  font-weight: normal; 
+	font-family: "Gilroy-Light"; 
+	src: url("../fonts/Gilroy-Light.ttf") format("truetype"); 
+	font-style: normal; 
+	font-weight: normal; 
+}
+
+::-webkit-scrollbar {
+    display: none;
 }
 
 body {
@@ -32,12 +36,12 @@ body {
 }
 
 .loader {
-  display: inline-block;
-  width: 30px;
-  height: 30px;
-  position: relative;
-  border: 4px solid #Fff;
-  animation: loader 2s infinite ease;
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	position: relative;
+	border: 4px solid #Fff;
+	animation: loader 2s infinite ease;
 }
 
 .loader-wrapper {
@@ -52,11 +56,11 @@ body {
 }
 
 .loader-inner {
-  	vertical-align: top;
-  	display: inline-block;
-  	width: 100%;
-  	background-color: #fff;
-  	animation: loader-inner 2s infinite ease-in;
+	vertical-align: top;
+	display: inline-block;
+	width: 100%;
+	background-color: #fff;
+	animation: loader-inner 2s infinite ease-in;
 }
 
 @keyframes loader {
@@ -108,33 +112,35 @@ header {
 	display: flex;
 	position: fixed;
 	top: 0;
-	width: 100%;
+	width: 100vw;
 	padding-top: 14px;
-  	padding-bottom: 14px;
-    z-index: 3;
-    justify-content: center;
+	padding-bottom: 14px;
+	z-index: 3;
+	justify-content: center;
+	box-sizing: border-box;
+  box-shadow: 0 3px 5px 0 rgb(0 0 0 / 9%);
 }
 
 .row {
-    width: 100%;
-    max-width: 1360px;
-    margin: 0 auto;
-    display: block;
-    padding: 0 20px;
+	width: 100%;
+	max-width: 1360px;
+	margin: 0 auto;
+	display: block;
+	padding: 0 20px;
 }
 
 .headerFlex {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
 }
 
 .logo {
 	height: 75px;
 	width: 160px;
 	display: inline-block;
-    vertical-align: middle;
+	vertical-align: middle;
 }
 
 .menu li a {
@@ -164,9 +170,10 @@ header {
 }
 
 .basketArea {
-	height: 75px;
-	display: flex;
-	justify-content: flex-end;
+	height: 73px;
+	position: absolute;
+	right: 0;
+	margin-right: 28px;
 }
 
 .basket {
@@ -244,7 +251,7 @@ div {
   flex-direction: row;
   align-items: center;
 	justify-content: center;
-	width: 100%;
+	width: 100wv;
 	transition: margin 0.5s ease-out;
 }
 
@@ -283,9 +290,9 @@ div {
 	position: relative;
 	top: 0;
 	left: 0;
-    background-color: #000;
-    margin-top: 103px;
-    width: 100%;
+	background-color: #000;
+	margin-top: 103px;
+	width: 100%;
 }
 
 .about:before {
@@ -534,6 +541,11 @@ footer {
 	z-index: 4;
 }
 
+@keyframes animateSocials {
+  from {top: -500px; opacity: 0}
+  to {top: 0; opacity: 1}
+}
+
 .socBtn {
 	font-family: 'Gilroy-Bold';
 	background-color: transparent;
@@ -613,9 +625,74 @@ footer {
 	transform: scale(2.0);
 }
 
-@keyframes animateSocials {
-  from {top: -500px; opacity: 0}
-  to {top: 0; opacity: 1}
+.shoppingCard {
+  display: none;
+  position: fixed;
+  z-index: 7; 
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.modalBlackout {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.7);
+}
+
+.modalCloseArea {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+.modalTile {
+	width: 380px;
+	background-color: #fff;
+	z-index: 7;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: auto 0 auto auto;
+  padding: 0 0 120px;
+  border-radius: 0;
+  justify-content: normal;
+}
+
+.continueShopping {
+  font-family: 'Gilroy-Bold';
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 104px;
+  border: 0;
+  background-color: #fff;
+  border-bottom: 2px solid #ebeef1;
+  font-size: 15px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.backArrow {
+	height: 32px;
+	width: 17px;
+}
+
+.continueShoppingText {
+	margin-left: 24px;
+}
+
+.modalTitle {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0 18px;
+    font-size: 38px;
+    line-height: 108px;
 }
 
 @media (hover: none) {
@@ -647,13 +724,16 @@ footer {
 	.logo {
 		transform: scale(0.8);
 	}
+	.container {
+		display: none;
+	}
 	.about {
 		margin-top: 74px;
 		height: 100vh;
 	}
 	/*.cardBox {
 		margin-right: 30px;
-    	margin-left: 0;
+    margin-left: 0;
 	}*/
 	.cardBox {
 		width: calc(45vw - 40px);

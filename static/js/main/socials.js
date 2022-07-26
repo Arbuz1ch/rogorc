@@ -9,22 +9,27 @@ let btn = document.getElementById("socBtn");
 // Get the <span> element that closes the modal
 let span = document.getElementsByClassName("close")[0];
 
+let body = document.getElementById("body");
+
 // When the user clicks on the button, open the modal
 btn.onclick = function() {
   modal.style.display = "flex";
   arrow.classList.add("activeArrow");
+  body.style.overflow = 'hidden';
 }
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
   modal.style.display = "none";
   arrow.classList.remove("activeArrow");
+  body.style = 'none';
 }
 
 // When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
+modal.onclick = function(event) {
   if (event.target == modal) {
     modal.style.display = "none";
     arrow.classList.remove("activeArrow");
+    body.style = 'none';
   }
 }
