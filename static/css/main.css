@@ -432,13 +432,13 @@ div.scrollmenu a {
 	border: none;
 	border-radius: 33px;
 	background-color: #f4f4f4;
- 	display: inline-block;
-  	color: #000;
-  	text-align: center;
-  	padding: 8px 16px;
-  	line-height: 20px;
-  	text-decoration: none;
-  	box-sizing: border-box;
+	display: inline-block;
+	color: #000;
+	text-align: center;
+	padding: 8px 16px;
+	line-height: 20px;
+	text-decoration: none;
+	box-sizing: border-box;
 	cursor: pointer;
 }
 
@@ -627,6 +627,8 @@ footer {
   height: 100%;
   overflow: hidden;
   animation: slide;
+	overflow-x: hidden;
+	overflow-y: scroll;
 }
 
 @keyframes slide{
@@ -635,7 +637,7 @@ footer {
 }
 
 .modalBlackout {
-	position: absolute;
+	position: fixed;
 	width: 100%;
 	height: 100%;
 	background-color: rgba(0,0,0,0.7);
@@ -691,26 +693,26 @@ footer {
 }
 
 .modalTitle {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    padding: 0 18px;
-    font-size: 38px;
-    line-height: 108px;
+	display: flex;
+	align-items: center;
+	width: 100%;
+	padding: 0 18px;
+	font-size: 38px;
+	line-height: 108px;
 }
 
 .cartList {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 305px;
-    max-width: 90vw;
-    margin-bottom: 30px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 305px;
+	max-width: 90vw;
+	margin-bottom: 30px;
 }
 
 .cartProduct {
-    position: relative;
-    width: 100%;
+	position: relative;
+	width: 100%;
 }
 
 .cardProductContent {
@@ -756,7 +758,6 @@ footer {
 	position: relative;
 	flex-direction: column;
 	align-items: flex-start;
-	margin-top: 3px;
 }
 
 .productCountTitle {
@@ -794,6 +795,48 @@ footer {
 	letter-spacing: 0.06rem;
 	bottom: 0;
 	right: 0;
+}
+
+.cartBottom {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	padding-top: 30px;
+	border-top: 2px solid #ebeef1;
+}
+
+.productsCost {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	margin-bottom: 25px;
+}
+
+.productsCostTitle {
+	font-size: 13px;
+	color: #818d92;
+	text-transform: uppercase;
+}
+
+.productsCostTotal {
+	font-size: 24px;
+}
+
+button[type=submit] {
+	margin-top: 20px;
+	font-size: 15px;
+	width: 277px;
+	height: 52px;
+	background-color: #FFEE32;
+	font-family: 'Gilroy-Bold';
+	color: #000;
+	border: none;
+	border-radius: 1000px;
+	cursor: pointer;
+	box-sizing: border-box;
+	transition: all 0.4s ease-out;
 }
 
 @media (hover: none) {
