@@ -14,20 +14,17 @@ let body1 = document.getElementById("body");
 
 basket.onclick = function() {
   shoppingCard.style.display = "flex";
-  modalTile.classList.add("activeModalTile");
   body1.style.overflow = 'hidden';
 }
 
 continueShopping.onclick = function() {
   shoppingCard.style.display = "none";
-  modalTile.classList.remove("activeModalTile");
   body1.style = 'none';
 }
 
 window.onclick = function(event) {
   if (event.target == modalCloseArea) {
     shoppingCard.style.display = "none";
-    modalTile.classList.remove("activeModalTile");
     body1.style = 'none';
   }
 }

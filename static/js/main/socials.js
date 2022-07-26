@@ -15,6 +15,7 @@ let body = document.getElementById("body");
 btn.onclick = function() {
   modal.style.display = "flex";
   arrow.classList.add("activeArrow");
+  modal.classList.add("modalShow");
   body.style.overflow = 'hidden';
 }
 
@@ -22,6 +23,7 @@ btn.onclick = function() {
 span.onclick = function() {
   modal.style.display = "none";
   arrow.classList.remove("activeArrow");
+  modal.classList.remove("modalShow");
   body.style = 'none';
 }
 
@@ -30,6 +32,7 @@ modal.onclick = function(event) {
   if (event.target == modal) {
     modal.style.display = "none";
     arrow.classList.remove("activeArrow");
+    modal.classList.remove("modalShow");
     body.style = 'none';
   }
 }
