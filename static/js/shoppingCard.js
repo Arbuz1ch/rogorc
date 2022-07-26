@@ -16,11 +16,13 @@ let body1 = document.getElementById("body");
 // When the user clicks on the button, open the modal
 basket.onclick = function() {
   shoppingCard.style.display = "flex";
+  // shoppingCard.classList.add("activeShoppingCard");
   body1.style.overflow = 'hidden';
 }
 
 continueShopping.onclick = function() {
   shoppingCard.style.display = "none";
+  // shoppingCard.classList.remove("activeShoppingCard");
   body1.style = 'none';
 }
 
@@ -29,6 +31,7 @@ continueShopping.onclick = function() {
 window.onclick = function(event) {
   if (event.target == modalCloseArea) {
     shoppingCard.style.display = "none";
+    // shoppingCard.classList.remove("activeShoppingCard");
     body1.style = 'none';
   }
 }

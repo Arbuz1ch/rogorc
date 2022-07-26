@@ -171,15 +171,12 @@ header {
 
 .basketArea {
 	height: 73px;
-	position: absolute;
-	right: 0;
-	margin-right: 28px;
 }
 
 .basket {
 	height: 32px;
 	width: 32px;
-	background-image: url(../img/basket.svg);
+	background-image: url(../img/cart.svg);
 	background-repeat: no-repeat;
 	background-size: 2rem;
 	background-color: transparent;
@@ -542,11 +539,6 @@ footer {
 	z-index: 4;
 }
 
-@keyframes animateSocials {
-  from {top: -500px; opacity: 0}
-  to {top: 0; opacity: 1}
-}
-
 .socBtn {
 	font-family: 'Gilroy-Bold';
 	background-color: transparent;
@@ -630,11 +622,13 @@ footer {
   display: none;
   position: fixed;
   z-index: 7; 
-  left: 0;
   top: 0;
   width: 100%;
   height: 100%;
   overflow: hidden;
+}
+
+.activeShoppingCard {
 }
 
 .modalBlackout {
@@ -646,7 +640,9 @@ footer {
 
 .modalCloseArea {
 	position: absolute;
+	min-width: 100vh;
 	width: 100%;
+	min-height: 100vh;
 	height: 100%;
 }
 
@@ -722,6 +718,14 @@ footer {
 		padding: 0px;
 		height: 74px;
 	}
+	.basketArea {
+		position: absolute;
+		right: 0;
+		margin-right: 28px;
+	}
+	.continueShopping {
+		height: 74px;
+	}
 	.logo {
 		transform: scale(0.8);
 	}
@@ -732,19 +736,12 @@ footer {
 		margin-top: 74px;
 		height: 100vh;
 	}
-	/*.cardBox {
-		margin-right: 30px;
-    margin-left: 0;
-	}*/
 	.cardBox {
 		width: calc(45vw - 40px);
 		max-width: 540px;
 		min-width: 310px;
     margin-bottom: 60px;
 	}
-	/*header {
-		justify-content: center;
-	}*/
 	.catalog {
 		margin-bottom: 12px;
 	}
