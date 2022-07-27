@@ -17,14 +17,18 @@ basket.onclick = function() {
 }
 
 continueShopping.onclick = function() {
-  shoppingCard.style.display = "none";
+  setTimeout(() => {
+    shoppingCard.style.display = "none";
+  }, 500);
   modalTile.classList.add("activeModalTile");
   body1.style = 'none';
 }
 
 window.onclick = function(event) {
   if (event.target == modalCloseArea) {
-    shoppingCard.style.display = "none";
+    setTimeout(() => {
+      shoppingCard.style.display = "none";
+    }, 500);
     modalTile.classList.add("activeModalTile");
     body1.style = 'none';
   }
