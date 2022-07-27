@@ -161,8 +161,8 @@ header {
 .menu li {
 	margin-right: 30px;
 	display: inline-block;
-    vertical-align: middle;
-    position: relative;
+	vertical-align: middle;
+	position: relative;
 }
 
 .menu {
@@ -242,7 +242,6 @@ div {
 }
 
 .screen2 {
-	/*margin-bottom: 80px;*/
 	flex-wrap: wrap;
 	display: flex;
   flex-direction: row;
@@ -420,8 +419,8 @@ div.scrollmenu {
 	margin: 0 auto;
 	display: flex;
 	-ms-overflow-style: -ms-autohiding-scrollbar;
-  	overflow-x: auto;
-  	white-space: nowrap;
+	overflow-x: auto;
+	white-space: nowrap;
 }
 
 div.scrollmenu a {
@@ -630,11 +629,6 @@ footer {
 	overflow-y: scroll;
 }
 
-@keyframes slide{
-	0% {opacity: 0;}
-	100% {transform: translateX(100px); opacity: 1;}
-}
-
 .modalBlackout {
 	position: fixed;
 	width: 100%;
@@ -659,9 +653,23 @@ footer {
 	margin: auto 0 auto auto;
 	padding: 0 0 20px;
 	justify-content: normal;
+	animation-name: slideIn;
+	animation-duration: 0.5s;
 }
 
 .activeModalTile {
+	animation-name: slideOut;
+	animation-duration: 0.5s;
+}
+
+@keyframes slideIn {
+  from {transform: translateX(380px);}
+  to {transform: translateX(0px);}
+}
+
+@keyframes slideOut {
+  from {transform: translateX(0px);}
+  to {transform: translateX(380px);}
 }
 
 .shoppingBtnArea {
