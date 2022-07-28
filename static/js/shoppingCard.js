@@ -10,6 +10,8 @@ let modalTile = document.getElementById("modalTile");
 
 let body1 = document.getElementById("body");
 
+
+
 basket.onclick = function() {
   shoppingCard.style.display = "flex";
   modalTile.classList.remove("activeModalTile");
@@ -33,3 +35,15 @@ window.onclick = function(event) {
     body1.style = 'none';
   }
 }
+
+let cart = {
+
+}
+
+modalTile.addEventListener('click', event => {
+  console.log(event.target);
+
+  if (event.target.classList.contains('plus')) {
+    console.log('plus');
+  }
+})

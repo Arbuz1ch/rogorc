@@ -22,6 +22,7 @@ function dataGetter(rows) {
     for (let i = 0; i < rows.length; i++) {
 
         const dish = {
+            id: rows[i].id,
             name: rows[i].name,
             picture: rows[i].picture,
             description: rows[i].description,
@@ -65,6 +66,7 @@ function renderDishCard(dish) {
 
     const dishName = document.createElement('p');
     dishName.classList.add('nameTovar');
+    dishName.classList.add(dish.id);
     dishName.innerHTML = `${dish.name}`;
 
     const dishPicture = document.createElement('img');
