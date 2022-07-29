@@ -13,34 +13,68 @@ async function getDishesFromDatabase() {
 function jsonDishesHandler(json) {
     const rows = json.data.rows;
 
-    dataFilter(rows);
+    console.log(rows);
+    dataGetter(rows);
 }
 
-function dataFilter(rows) {
+function dataGetter(rows) {
+
+    for (let i = 0; i < rows.length; i++) {
+
+        const dish = {
+            id: rows[i].id,
+            name: rows[i].name,
+            picture: rows[i].picture,
+            description: rows[i].description,
+            price: rows[i].price,
+            categoryId: rows[i].categoryId,
+        };
+
+        renderDishCard(dish);
+    
+    }
 
     const catButton = document.querySelectorAll('.categoryButton');
+    const cardBox = document.querySelectorAll('.cardBox');
+    const cartButton = document.querySelectorAll('.buyButton');
+
+    cardBox.forEach((box) => {
+        box.addEventListener('click', (event) => {
+            if (event.target.classList.contains('buyButton')) {
+                const dish = {
+                    name: box.querySelector('.nameTovar').innerHTML,
+                    picture: box.querySelector('.tovarImg').src,
+                    price: box.querySelector('.tovarPriceNumber').innerHTML,
+                }
+
+                
+                let allrows = JSON.parse(localStorage.getItem('cartDish')) || [];
+                allrows.push(dish);
+
+                localStorage.setItem("cartDish", JSON.stringify(allrows));
+                console.log(dish);
+            };
+        });
+    })
+
     catButton.forEach((button) => {
         button.addEventListener('click', (event) => {
             event.preventDefault();
-            const dataAttr = button.getAttribute('data-c');
-            for (let i = 0; i < rows.length; i++) {
-                if (dataAttr === rows[i].categoryId) {
-                    const dish = {
-                        name: rows[i].name,
-                        picture: rows[i].picture,
-                        description: rows[i].description,
-                        price: rows[i].price,
-                    };
-
-                    console.log(dish);
-                    removeDishCard();
-                    renderDishCard(dish);
-                }     
-            }
+            dataFilter(button.dataset.c, cardBox);
         });
 
     })
-    console.log(rows);
+}
+
+function dataFilter(category, items) {
+    items.forEach((item) => {
+        const isDataFiltered = !item.classList.contains(category);
+        if (isDataFiltered) {
+            item.classList.add('hide');
+        } else {
+            item.classList.remove('hide');
+        }
+    });
 }
 
 function renderDishCard(dish) {
@@ -48,9 +82,11 @@ function renderDishCard(dish) {
 
     const dishCard = document.createElement('div');
     dishCard.classList.add('cardBox');
+    dishCard.classList.add(dish.categoryId);
 
     const dishName = document.createElement('p');
     dishName.classList.add('nameTovar');
+    dishName.classList.add(dish.id);
     dishName.innerHTML = `${dish.name}`;
 
     const dishPicture = document.createElement('img');
@@ -68,6 +104,9 @@ function renderDishCard(dish) {
     dishPriceSpan.classList.add('tovarPriceNumber');
     dishPriceSpan.innerHTML = dish.price;
 
+    const cartButton = document.createElement('button');
+    cartButton.classList.add('buyButton');
+    cartButton.innerHTML = 'В корзину';
 
     dishCard.appendChild(dishName);
     dishCard.appendChild(dishPicture);
@@ -76,18 +115,10 @@ function renderDishCard(dish) {
     dishPrice.appendChild(dishPriceSpan);
     dishCard.appendChild(dishPrice);
 
+    dishCard.appendChild(cartButton);
 
     dishList.appendChild(dishCard);
 
-}
-
-function removeDishCard() {
-    const dishList = document.querySelector('.catalog');
-    const dishCard = document.querySelector('.cardBox');
-
-    if (dishCard != null) {
-        dishList.removeChild(dishCard);
-    }
 }
 
 getDishesFromDatabase();

@@ -7,3 +7,17 @@ $('button[href^="#"]').on('click', function() {
 
     return false;
 })
+
+window.onload = () => {
+    if (window.pageYOffset < 300) {
+    $('.upbutton').css('display', 'none');
+}
+}
+
+$(window).on('scroll', () => {
+    if (window.pageYOffset < 250) {
+        $('.upbutton').css('display', 'none');
+    } else {
+        $('.upbutton').css('display', '');
+    }
+})
