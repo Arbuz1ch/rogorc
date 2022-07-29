@@ -36,6 +36,26 @@ function dataGetter(rows) {
 
     const catButton = document.querySelectorAll('.categoryButton');
     const cardBox = document.querySelectorAll('.cardBox');
+    const cartButton = document.querySelectorAll('.buyButton');
+
+    cardBox.forEach((box) => {
+        box.addEventListener('click', (event) => {
+            if (event.target.classList.contains('buyButton')) {
+                const dish = {
+                    name: box.querySelector('.nameTovar').innerHTML,
+                    picture: box.querySelector('.tovarImg').src,
+                    price: box.querySelector('.tovarPriceNumber').innerHTML,
+                }
+
+                
+                let allrows = JSON.parse(localStorage.getItem('cartDish')) || [];
+                allrows.push(dish);
+
+                localStorage.setItem("cartDish", JSON.stringify(allrows));
+                console.log(dish);
+            };
+        });
+    })
 
     catButton.forEach((button) => {
         button.addEventListener('click', (event) => {
