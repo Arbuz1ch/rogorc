@@ -30,6 +30,11 @@
 	display: none;
 }
 
+::selection {
+  color: #fff;
+  background: #000;
+}
+
 body {
 	letter-spacing: .03em;
 	font-family: 'Gilroy-Bold';
