@@ -114,13 +114,13 @@ body {
 }
 
 header {
-	background-color: #FFEE32;
+	height: 89px;
+	padding: 0 30px;
+	background-color: #FDD935;
 	display: flex;
 	position: fixed;
 	top: 0;
 	width: 100vw;
-	padding-top: 14px;
-	padding-bottom: 14px;
 	z-index: 3;
 	justify-content: center;
 	box-sizing: border-box;
@@ -135,11 +135,14 @@ header {
 	padding: 0 20px;
 }
 
-.headerFlex {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	align-items: center;
+.headerContent {
+	width: 100vw;
+	max-width: 1540px;
+	padding: 0 28px;
+}
+
+.logoArea {
+	/*margin-right: 2.5rem;*/
 }
 
 .logo {
@@ -269,35 +272,32 @@ div {
 
 .upbutton {
 	justify-content: center;
-	text-align: center;
-	font-size: 1.2rem;
   position: fixed;
   z-index: 99;
-  left: 95%;
+  right: 0;
+  bottom: 0;
+  margin-bottom: 18px;
   transform: translate(-50%, 0); 
   border: none;
-  background-color: transparent;
-  width: 25%;
-  /*height: 62px;*/
-  font-family: 'Gilroy-Bold';
-  color: #000;
+  border-radius: 50%;
+  background-color: #FDD935;
+  width: 50px;
+  height: 50px;
   cursor: pointer;
   transition: all 0.4s ease;
-  margin-bottom: 72px;
-  bottom: 0;
 }
 
 .upbutton:hover {
-	opacity: 65%;
+	background-color: #fff;
 }
 
 .about {
-	height: calc(100vh - 103px);
+	height: calc(100vh - 89px);
 	position: relative;
 	top: 0;
 	left: 0;
 	background-color: #000;
-	margin-top: 103px;
+	margin-top: 89px;
 	width: 100%;
 }
 
@@ -803,7 +803,7 @@ footer {
 }
 
 .continueShopping:hover {
-	opacity: 50%;
+	color: #616060;
 }
 
 .backArrow {
@@ -850,7 +850,6 @@ footer {
   align-items: center;
   width: 144px;
   height: 120px;
-  /*padding: 11px;*/
   border-radius: 10px;
   border: 1px solid #e2e7ec;
 }
@@ -962,10 +961,10 @@ footer {
 
 button[type=submit] {
 	margin-top: 20px;
-	font-size: 15px;
+	font-size: 16px;
 	width: 277px;
 	height: 52px;
-	background-color: #FFEE32;
+	background-color: #FDD935;
 	font-family: 'Gilroy-Bold';
 	color: #000;
 	border: none;
@@ -1022,7 +1021,7 @@ button[type=submit]:hover {
 	}
 	.about {
 		margin-top: 74px;
-		height: 100vh;
+		height: calc(100vh - 74px);
 	}
 	.cardBox {
 		width: calc(45vw - 40px);
