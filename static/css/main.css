@@ -160,12 +160,7 @@ header {
 	text-decoration: none;
 	font-size: 16px;
 	margin-left: auto;
-	transition: all 0.2s ease;
 	box-sizing: border-box;
-}
-
-.menu li a:hover {
-	opacity: 80%;
 }
 
 .menu li {
@@ -229,17 +224,10 @@ div {
 	align-items: center;
 	text-decoration: none;
 	padding: 29px 43px;
-	transition: all 0.4s ease;
 	cursor: pointer;
 	width: 25%;
 	min-width: 175px;
 	box-sizing: border-box;
-}
-
-.catalogButton:hover {
-	color: black;
-	background-color: white;
-	box-shadow: 0px 0px 20px white;
 }
 
 .screen {
@@ -284,11 +272,6 @@ div {
   width: 50px;
   height: 50px;
   cursor: pointer;
-  transition: all 0.4s ease;
-}
-
-.upbutton:hover {
-	background-color: #fff;
 }
 
 .about {
@@ -329,14 +312,8 @@ div {
   height: 100%;
 }
 
-/*p {
-	letter-spacing: .18px;
-	display: block;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-}*/
+p {
+}
 
 .sweet {
   max-width: 630px;
@@ -374,15 +351,8 @@ div {
   vertical-align: top;
   margin-bottom: 60px;
   margin: 0px 25px 50px 25px;
-  transition: all .1s ease-out;
   box-sizing: border-box;
   overflow: hidden;
-}
-
-.cardBox:hover {
-	background-color: #fff;
-	box-shadow: 0px 0px 20px rgba(0,0,0,0.08);
-	transform: scale(1.03);
 }
 
 .tovarType {
@@ -412,6 +382,7 @@ div {
   display: table;
   cursor: default;
   font-size: 14px;
+	line-height: 20px;
   color: #4a4a4a;
 }
 
@@ -498,13 +469,6 @@ div.scrollmenu a:hover {
 	bottom: 0px;
 	cursor: pointer;
 	box-sizing: border-box;
-	transition: all 0.4s ease;
-}
-
-.buyButton:hover {
-	border-color: black;
-	background-color: black;
-	box-shadow: 0px 0px 10px rgba(0,0,0,0.12);
 }
 
 footer {
@@ -531,11 +495,6 @@ footer {
 	position: absolute;
 	top: 73px;
 	cursor: pointer;
-	transition: all 0.4s ease;
-}
-
-.footerLogo:hover {
-	opacity: 0.2;
 }
 
 .footerEmail {
@@ -585,20 +544,10 @@ footer {
 .facebook {
 	color: #616060;
 	margin-right: 12px;
-	transition: 0.4s ease;
-}
-
-.facebook:hover {
-	opacity: 0.5;
 }
 
 .instagram {
 	color: #616060;
-	transition: 0.4s ease;
-}
-
-.instagram:hover {
-	opacity: 0.5;
 }
 
 .footerDisclaimer {
@@ -980,21 +929,9 @@ button[type=submit]:hover {
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
 }
 
-@media (hover: none) {
-	.cardBox:hover {
-		box-shadow: none;
-		transform: none;
-	}
-	.upbutton:hover {
-		background-color: #FDD935;
-	}
-	.upbutton:active {
+@media (hover: none) and (pointer: coarse) {
+  .upbutton:active {
 		background-color: #fff;
-	}
-	.catalogButton:hover {
-		color: #fff;
-		background-color: transparent;
-		box-shadow: none;
 	}
 	.catalogButton:active {
 		color: black;
@@ -1002,6 +939,66 @@ button[type=submit]:hover {
 		box-shadow: 0px 0px 20px white;
 	}
 }
+
+@media (hover: hover) and (pointer: fine) {
+	.menu li a {
+		transition: all 0.2s ease;
+	}
+
+	.menu li a:hover {
+		opacity: 80%;
+	}
+	.catalogButton {
+		transition: all 0.4s ease;
+	}
+	.catalogButton:hover {
+		color: black;
+		background-color: white;
+		box-shadow: 0px 0px 20px white;
+	}
+	.footerLogo {
+		transition: all 0.4s ease;
+	}
+	.footerLogo:hover {
+		opacity: 0.2;
+	}
+	.cardBox {
+  	transition: all .1s ease-out;
+	}
+	.cardBox:hover {
+		background-color: #fff;
+		box-shadow: 0px 0px 20px rgba(0,0,0,0.08);
+		transform: scale(1.03);
+	}
+	.buyButton {
+		transition: all 0.4s ease;
+	}
+	.buyButton:hover {
+		border-color: black;
+		background-color: black;
+		box-shadow: 0px 0px 10px rgba(0,0,0,0.12);
+	}
+	.upbutton {
+  	transition: all 0.4s ease;
+	}
+	.upbutton:hover {
+		background-color: #fff;
+	}
+	.facebook {
+		transition: 0.4s ease;
+	}
+
+	.facebook:hover {
+		opacity: 0.5;
+	}
+	.instagram {
+		transition: 0.4s ease;
+	}
+	.instagram:hover {
+		opacity: 0.5;
+	}
+}
+
 @media screen and (max-width: 1299px) {
 	.cardBox {
 		margin-right: 0px;
