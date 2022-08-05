@@ -1019,6 +1019,9 @@ button[type=submit]:hover {
 }
 
 @media screen and (max-width: 1200px) {
+	.catalog {
+		width: 93vw;
+	}
 	header {
 		padding: 0px;
 		height: 74px;
@@ -1042,7 +1045,7 @@ button[type=submit]:hover {
 		height: calc(100vh - 74px);
 	}
 	.cardBox {
-		width: calc(45vw - 40px);
+		width: calc(45vw - 50px);
 		max-width: 540px;
 		min-width: 310px;
     margin-bottom: 60px;
@@ -1063,12 +1066,13 @@ button[type=submit]:hover {
 	.catalog {
 		margin-bottom: 46px;
 	}
-	.cardBox {
-		width: calc(100vw - 40px);
+	/*.cardBox {
+		width: calc(100vw - 50px);
+		max-width: 470px;
 		margin-right: 0px;
 		margin-left: 0px;
 		margin-bottom: 26px;
-	}
+	}*/
 	.container {
 		display: none;
 	}
@@ -1181,7 +1185,8 @@ button[type=submit]:hover {
 		margin-right: 20px;
 	}
 	.cardBox {
-		width: calc(100vw - 40px);
+		width: calc(100vw - 50px);
+		/*width: calc(100vw - 50px);*/
 		margin-right: 0px;
 		margin-left: 0px;
 	}
@@ -1190,11 +1195,18 @@ button[type=submit]:hover {
 		margin: 0 auto;
 	}
 	.sweet {
-		max-width: 767px;
-		text-align: center;
+		/*text-align: center;*/
 		font-size: 44px;
-
+		line-height: normal;
 	}
+	/*.sweet {
+  	max-width: 630px;
+  	font-size: 60px;
+  	line-height: 71px;
+  	text-transform: uppercase;
+  	margin-bottom: 22px;
+  	margin: 0 0 10px;
+	}*/
 	.text {
 		text-align: center;
 	}
