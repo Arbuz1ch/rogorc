@@ -312,9 +312,6 @@ div {
   height: 100%;
 }
 
-p {
-}
-
 .sweet {
   max-width: 630px;
   font-size: 60px;
@@ -355,7 +352,7 @@ p {
   overflow: hidden;
 }
 
-.tovarType {
+/*.tovarType {
 	font-family: 'Gilroy-Regular';
   display: table;
   cursor: default;
@@ -363,7 +360,7 @@ p {
   color: #4a4a4a;
   margin: 5px auto 5px;
   text-transform: lowercase;
-}
+}*/
 
 .nameTovar {
 	margin-block-start: 0em;
@@ -377,13 +374,25 @@ p {
   cursor: pointer;
 }
 
+.tovarImg {
+	height: 185px;
+	width: 100%;
+	object-fit: cover;
+}
+
+.tovarPng {
+	max-height: 100%;
+	max-width: 100%;
+	transform: scale(1.1);
+}
+
 .descrition {
 	font-family: 'Gilroy-Regular';
-  display: table;
-  cursor: default;
-  font-size: 14px;
+	display: table;
+	cursor: default;
+	font-size: 14px;
 	line-height: 20px;
-  color: #4a4a4a;
+	color: #4a4a4a;
 }
 
 .tovarPrice {
@@ -944,7 +953,6 @@ button[type=submit]:hover {
 	.menu li a {
 		transition: all 0.2s ease;
 	}
-
 	.menu li a:hover {
 		opacity: 80%;
 	}
