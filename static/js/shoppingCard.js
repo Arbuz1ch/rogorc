@@ -17,22 +17,34 @@ basket.onclick = function() {
   modalTile.classList.remove("activeModalTile");
   body1.style.overflow = 'hidden';
 
-  renderCart();
+  const cartDish = JSON.parse(localStorage.getItem('cartDish'));
+
+  for (let i = 0; i < cartDish.length; i++) {
+    const dish = {
+      name: cartDish[i].name,
+      picture: cartDish[i].picture,
+      price: cartDish[i].price
+    }
+      renderCart(dish);
+  }
+
 }
 
 continueShopping.onclick = function() {
   setTimeout(() => {
     shoppingCard.style.display = "none";
+    document.querySelector('.cartProduct').remove();
   }, 500);
   modalTile.classList.add("activeModalTile");
   body1.style = 'none';
-  document.querySelector('.cartProduct').remove();
+
 }
 
 window.onclick = function(event) {
   if (event.target == modalCloseArea) {
     setTimeout(() => {
       shoppingCard.style.display = "none";
+      document.querySelector('.cartProduct').remove();
     }, 500);
     modalTile.classList.add("activeModalTile");
     body1.style = 'none';
@@ -48,11 +60,7 @@ modalTile.addEventListener('click', event => {
   }
 })
 
-function renderCart() {
-  let cardList = JSON.parse(localStorage.getItem('cartDish'));
-  console.log(cardList);
-
-  
+function renderCart(dish) {
 
   const cartProduct = document.createElement('div');
   cartProduct.classList.add('cartProduct');
@@ -68,6 +76,7 @@ function renderCart() {
   productInfo.classList.add('productInfo');
   const productName = document.createElement('span');
   productName.classList.add('productName');
+  productName.innerHTML = dish.name;
   const productCountTitle = document.createElement('span');
   productCountTitle.classList.add('productCountTitle');
   productCountTitle.innerHTML = 'Количество: ';
