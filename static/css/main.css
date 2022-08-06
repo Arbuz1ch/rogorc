@@ -489,6 +489,7 @@ div.scrollmenu a:hover {
 }
 
 footer {
+	/*width: 100vw;*/
 	padding: 40px;
 	display: flex;
 	align-items: center;
