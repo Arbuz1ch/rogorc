@@ -17,24 +17,43 @@ basket.onclick = function() {
   modalTile.classList.remove("activeModalTile");
   body1.style.overflow = 'hidden';
 
-  const cartDish = JSON.parse(localStorage.getItem('cartDish'));
+  // const cartDish = JSON.parse(localStorage.getItem('cartDish'));
 
-  for (let i = 0; i < cartDish.length; i++) {
+  // for (let i = 0; i < cartDish.length; i++) {
+  //   const dish = {
+  //     name: cartDish[i].name,
+  //     picture: cartDish[i].picture,
+  //     price: cartDish[i].price,
+  //     id: i,
+  //   }
+  //     renderCart(dish);
+
+  Object.keys(localStorage).forEach((key) => {
+    const dishkey = JSON.parse(localStorage.getItem(`${key}`));
+    console.log(key);
     const dish = {
-      name: cartDish[i].name,
-      picture: cartDish[i].picture,
-      price: cartDish[i].price
-    }
-      renderCart(dish);
+      name: dishkey.name,
+      picture: dishkey.picture,
+      price: dishkey.price,
+    };
+    console.log(JSON.parse(JSON.stringify(dish)));
+    renderCart(dish);
+  })
+      
   }
-
-}
+  productRemove();
 
 continueShopping.onclick = function() {
   setTimeout(() => {
     shoppingCard.style.display = "none";
-    document.querySelector('.cartProduct').remove();
+    const cartProductList = document.querySelectorAll('.cartProduct');
+    console.log(cartProductList);
+    cartProductList.forEach((product) => {
+        product.remove();
+    });
   }, 500);
+
+
   modalTile.classList.add("activeModalTile");
   body1.style = 'none';
 
@@ -44,7 +63,11 @@ window.onclick = function(event) {
   if (event.target == modalCloseArea) {
     setTimeout(() => {
       shoppingCard.style.display = "none";
-      document.querySelector('.cartProduct').remove();
+      const cartProductList = document.querySelectorAll('.cartProduct');
+      console.log(cartProductList);
+      cartProductList.forEach((product) => {
+          product.remove();
+      });
     }, 500);
     modalTile.classList.add("activeModalTile");
     body1.style = 'none';
@@ -60,7 +83,23 @@ modalTile.addEventListener('click', event => {
   }
 })
 
+function productRemove() {
+  const cartProductList = document.querySelectorAll('.cartProduct');
+  cartProductList.forEach((box) => {
+    box.addEventListener('click', (event) => {
+      if (event.target.classList.contains('productRemove')) {
+        const index = box.dataset.id;
+        console.log(index);
+        // cartDish.splice(cartDish[index], 1)
+        localStorage.removeItem('cartDish');
+        box.remove();
+      }
+    })
+  });
+}
+
 function renderCart(dish) {
+  const cartList = document.querySelector('.cartList');
 
   const cartProduct = document.createElement('div');
   cartProduct.classList.add('cartProduct');
@@ -71,6 +110,7 @@ function renderCart(dish) {
   const productPreview = document.createElement('span');
   productPreview.classList.add('productPreview');
   const cartImage = document.createElement('img');
+  cartImage.src = dish.picture
 
   const productInfo = document.createElement('div');
   productInfo.classList.add('productInfo');
@@ -94,6 +134,7 @@ function renderCart(dish) {
 
   const productPrice = document.createElement('span');
   productPrice.classList.add('productPrice');
+  productPrice.innerHTML = '₾  ' + dish.price
 
   const productRemove = document.createElement('div');
   productRemove.classList.add('productRemove');
@@ -111,11 +152,11 @@ function renderCart(dish) {
   productInfo.appendChild(productName);
   productInfo.appendChild(productCountTitle);
   productInfo.appendChild(count);
+  productInfo.appendChild(productPrice);
   cardProductContent.appendChild(productInfo);
 
   cardProductContent.appendChild(productRemove);
 
   cartProduct.appendChild(cardProductContent);
   cartList.appendChild(cartProduct);
-  
 }

@@ -48,10 +48,10 @@ function dataGetter(rows) {
                 }
 
                 
-                let allrows = JSON.parse(localStorage.getItem('cartDish')) || [];
-                allrows.push(dish);
+                // let allrows = JSON.parse(localStorage.getItem('cartDish')) || [];
+                // allrows.push(dish);
 
-                localStorage.setItem("cartDish", JSON.stringify(allrows));
+                localStorage.setItem(dish.name, JSON.stringify(dish));
                 console.log(dish);
             };
         });
