@@ -950,6 +950,14 @@ button[type=submit]:hover {
 		background-color: white;
 		box-shadow: 0px 0px 20px white;
 	}
+	.cardBox {
+		transition: all .1s ease-out;
+	}
+	.cardBox:hover {
+		background-color: #fff;
+		box-shadow: 0px 0px 20px rgba(0,0,0,0.08);
+		transform: scale(1.03);
+	}
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -974,7 +982,7 @@ button[type=submit]:hover {
 		opacity: 0.2;
 	}
 	.cardBox {
-  	transition: all .1s ease-out;
+		transition: all .1s ease-out;
 	}
 	.cardBox:hover {
 		background-color: #fff;
