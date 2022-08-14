@@ -10,15 +10,15 @@ let modalTile = document.getElementById("modalTile");
 
 let body1 = document.getElementById("body");
 
-const cartList = document.querySelector('.cartList');
+const cartList = document.querySelectorAll('.cartList');
 
 const orderButton = document.getElementById('orderButton');
 
-// orderButton.onclick = function() {
-//   const count = document.querySelector('.productCountValue');
-//   const dishValue = count.getAttribute('value');
-//   console.log(dishValue);
-// }
+orderButton.onclick = function() {
+  const count = document.querySelector('.productCountValue');
+  const dishValue = count.getAttribute('value');
+  console.log(dishValue);
+}
 
 
 basket.onclick = function() {
@@ -99,42 +99,36 @@ function productRemove() {
   });
 }
 
-function productCount() {
-  const cartProductList = document.querySelectorAll('.cartProduct');
-  cartProductList.forEach((box) => {
-    console.log(box)
-    box.addEventListener('click', (event) => {
-      const countValue = document.querySelectorAll('.productCountValue');
+function productCount() { 
+    cartList.forEach((box) => {
+      const count = box.querySelectorAll('.count');
 
-      const count = document.querySelector('.count');
-      const min = parseInt(count.dataset.min);
-      const max = parseInt(count.dataset.max);
-
-      countValue.forEach((cv) => {
-        console.log(cv);
-        cv.addEventListener('click', (event) => {
-          let i = parseFloat(cv.getAttribute('value'));
-          console.log(cv)
-
+      count.forEach((value) => {
+        value.addEventListener('click', (event) => {
+        const min = parseInt(value.dataset.min);
+        const max = parseInt(value.dataset.max);
+        const countValue = value.querySelector('.productCountValue');
+          let i = parseInt(countValue.getAttribute('value'));
           if (event.target.classList.contains('minus')) {
-            if (i == min) {
-              return;
-            }
-            i--
-            cv.setAttribute('value', i);
+              if (i == min) {
+                return;
+              }
+              i--
+              countValue.setAttribute('value', i);
           }
           if (event.target.classList.contains('plus')) {
-            if (i == max) {
-              return;
-            }
-            i++
-            cv.setAttribute('value', i);
-      }
+              if (i == max) {
+                return;
+              }
+              i++
+              countValue.setAttribute('value', i);
+          }
+        })
+
         })
       })
-    })
-  })
-}
+    }
+
 
 function renderCart(dish) {
   const cartList = document.querySelector('.cartList');
@@ -149,6 +143,7 @@ function renderCart(dish) {
   productPreview.classList.add('productPreview');
   const cartImage = document.createElement('img');
   cartImage.src = dish.picture
+  cartImage.style.width = '185px'
 
   const productInfo = document.createElement('div');
   productInfo.classList.add('productInfo');
