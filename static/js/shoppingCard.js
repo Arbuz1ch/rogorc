@@ -12,10 +12,20 @@ let body1 = document.getElementById("body");
 
 const cartList = document.querySelector('.cartList');
 
+const orderButton = document.getElementById('orderButton');
+
+// orderButton.onclick = function() {
+//   const count = document.querySelector('.productCountValue');
+//   const dishValue = count.getAttribute('value');
+//   console.log(dishValue);
+// }
+
+
 basket.onclick = function() {
   shoppingCard.style.display = "flex";
   modalTile.classList.remove("activeModalTile");
   body1.style.overflow = 'hidden';
+  
 
   // const cartDish = JSON.parse(localStorage.getItem('cartDish'));
 
@@ -39,9 +49,10 @@ basket.onclick = function() {
     console.log(JSON.parse(JSON.stringify(dish)));
     renderCart(dish);
   })
-      
+      productRemove();    
+      productCount();
   }
-  productRemove();
+
 
 continueShopping.onclick = function() {
   setTimeout(() => {
@@ -75,27 +86,54 @@ window.onclick = function(event) {
   }
 }
 
-modalTile.addEventListener('click', event => {
-  console.log(event.target);
-
-  if (event.target.classList.contains('plus')) {
-    console.log('plus');
-  }
-})
-
 function productRemove() {
   const cartProductList = document.querySelectorAll('.cartProduct');
   cartProductList.forEach((box) => {
     box.addEventListener('click', (event) => {
       if (event.target.classList.contains('productRemove')) {
-        const index = box.dataset.id;
-        console.log(index);
-        // cartDish.splice(cartDish[index], 1)
-        localStorage.removeItem('cartDish');
+        const key = document.querySelector('.productName').innerHTML;
+        localStorage.removeItem(key);
         box.remove();
       }
     })
   });
+}
+
+function productCount() {
+  const cartProductList = document.querySelectorAll('.cartProduct');
+  cartProductList.forEach((box) => {
+    console.log(box)
+    box.addEventListener('click', (event) => {
+      const countValue = document.querySelectorAll('.productCountValue');
+
+      const count = document.querySelector('.count');
+      const min = parseInt(count.dataset.min);
+      const max = parseInt(count.dataset.max);
+
+      countValue.forEach((cv) => {
+        console.log(cv);
+        cv.addEventListener('click', (event) => {
+          let i = parseFloat(cv.getAttribute('value'));
+          console.log(cv)
+
+          if (event.target.classList.contains('minus')) {
+            if (i == min) {
+              return;
+            }
+            i--
+            cv.setAttribute('value', i);
+          }
+          if (event.target.classList.contains('plus')) {
+            if (i == max) {
+              return;
+            }
+            i++
+            cv.setAttribute('value', i);
+      }
+        })
+      })
+    })
+  })
 }
 
 function renderCart(dish) {
@@ -123,11 +161,16 @@ function renderCart(dish) {
 
   const count = document.createElement('div');
   count.classList.add('count');
+  count.dataset.data_step = 1;
+  count.dataset.min = 1;
+  count.dataset.max = 7;
   const minus = document.createElement('span');
   minus.classList.add('minus');
   minus.innerHTML = '-';
   const productCountValue = document.createElement('input');
   productCountValue.classList.add('productCountValue');
+  let i = 1;
+  productCountValue.setAttribute('value', i);
   const plus = document.createElement('span');
   plus.classList.add('plus');
   plus.innerHTML = '+';
