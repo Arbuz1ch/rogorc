@@ -10,12 +10,22 @@ let modalTile = document.getElementById("modalTile");
 
 let body1 = document.getElementById("body");
 
-const cartList = document.querySelector('.cartList');
+const cartList = document.querySelectorAll('.cartList');
+
+const orderButton = document.getElementById('orderButton');
+
+orderButton.onclick = function() {
+  const count = document.querySelector('.productCountValue');
+  const dishValue = count.getAttribute('value');
+  console.log(dishValue);
+}
+
 
 basket.onclick = function() {
   shoppingCard.style.display = "flex";
   modalTile.classList.remove("activeModalTile");
   body1.style.overflow = 'hidden';
+  
 
   // const cartDish = JSON.parse(localStorage.getItem('cartDish'));
 
@@ -39,9 +49,10 @@ basket.onclick = function() {
     console.log(JSON.parse(JSON.stringify(dish)));
     renderCart(dish);
   })
-      
+      productRemove();    
+      productCount();
   }
-  productRemove();
+
 
 continueShopping.onclick = function() {
   setTimeout(() => {
@@ -75,28 +86,49 @@ window.onclick = function(event) {
   }
 }
 
-modalTile.addEventListener('click', event => {
-  console.log(event.target);
-
-  if (event.target.classList.contains('plus')) {
-    console.log('plus');
-  }
-})
-
 function productRemove() {
   const cartProductList = document.querySelectorAll('.cartProduct');
   cartProductList.forEach((box) => {
     box.addEventListener('click', (event) => {
       if (event.target.classList.contains('productRemove')) {
-        const index = box.dataset.id;
-        console.log(index);
-        // cartDish.splice(cartDish[index], 1)
-        localStorage.removeItem('cartDish');
+        const key = document.querySelector('.productName').innerHTML;
+        localStorage.removeItem(key);
         box.remove();
       }
     })
   });
 }
+
+function productCount() { 
+    cartList.forEach((box) => {
+      const count = box.querySelectorAll('.count');
+
+      count.forEach((value) => {
+        value.addEventListener('click', (event) => {
+        const min = parseInt(value.dataset.min);
+        const max = parseInt(value.dataset.max);
+        const countValue = value.querySelector('.productCountValue');
+          let i = parseInt(countValue.getAttribute('value'));
+          if (event.target.classList.contains('minus')) {
+              if (i == min) {
+                return;
+              }
+              i--
+              countValue.setAttribute('value', i);
+          }
+          if (event.target.classList.contains('plus')) {
+              if (i == max) {
+                return;
+              }
+              i++
+              countValue.setAttribute('value', i);
+          }
+        })
+
+        })
+      })
+    }
+
 
 function renderCart(dish) {
   const cartList = document.querySelector('.cartList');
@@ -111,6 +143,7 @@ function renderCart(dish) {
   productPreview.classList.add('productPreview');
   const cartImage = document.createElement('img');
   cartImage.src = dish.picture
+  cartImage.style.width = '185px'
 
   const productInfo = document.createElement('div');
   productInfo.classList.add('productInfo');
@@ -123,11 +156,16 @@ function renderCart(dish) {
 
   const count = document.createElement('div');
   count.classList.add('count');
+  count.dataset.data_step = 1;
+  count.dataset.min = 1;
+  count.dataset.max = 7;
   const minus = document.createElement('span');
   minus.classList.add('minus');
   minus.innerHTML = '-';
   const productCountValue = document.createElement('input');
   productCountValue.classList.add('productCountValue');
+  let i = 1;
+  productCountValue.setAttribute('value', i);
   const plus = document.createElement('span');
   plus.classList.add('plus');
   plus.innerHTML = '+';
