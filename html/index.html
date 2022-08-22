@@ -16,8 +16,8 @@
 
 	<header>
 		<div class="headerContent">
-			<a href="#screen0" class="logoArea">
-         		<img src="../static/img/logo.svg" class="logo">
+			<a href="#screen0" onclick="window.location.reload(true);" class="logoArea">
+         		<img src="../static/img/logo.svg" class="logo" id="logo">
       		</a>
 				<!-- <div class="container">
 					<ul class="menu">
@@ -47,12 +47,15 @@
 		</button>
 	</div>
 
-	<div id="socialsModal" class="modal">
-		<div class="closeSocials">
+	<div id="socialsModal" class="socialsModal">
+		<!-- <div class="closeSocials">
 			<span class="close">&times;</span>
-		</div>
+		</div> -->
 		
   		<div class="socialLinks">
+  			<div class="closeSocials">
+				<span class="close">&times;</span>
+			</div>
     		<a href="#">Whatsapp</a>
     		<a href="#">Telegram</a>
     		<a href="#">Написать SMS</a>

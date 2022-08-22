@@ -149,8 +149,8 @@ header {
 .logo {
 	height: 75px;
 	width: 160px;
-	display: inline-block;
 	vertical-align: middle;
+	cursor: pointer;
 }
 
 .basketArea {
@@ -630,18 +630,18 @@ footer {
 	transition: all 0.4s ease;
 }
 
-.modal {
+.socialsModal {
 	display: none;
 	align-items: center;
 	justify-content: center;
 	position: fixed;
-	z-index: 4;
+	z-index: 8;
 	left: 0;
 	top: 0;
 	width: 100%;
 	height: 100%;
 	overflow: hidden;
-	background-color: rgba(0,0,0,0.75);
+	background-color: rgba(0,0,0,0.50);
 }
 
 .socialLinks {
@@ -1057,7 +1057,8 @@ button[type=submit]:hover {
 		height: 74px;
 	}
 	.logo {
-		transform: scale(0.8);
+		width: 128px;
+		height: 60px;
 	}
 	.container {
 		display: none;
@@ -1204,27 +1205,14 @@ button[type=submit]:hover {
 	}
 	.cardBox {
 		width: calc(100vw - 50px);
-		/*width: calc(100vw - 50px);*/
 		margin-right: 0px;
 		margin-left: 0px;
 	}
-	/*.row {
-		padding: 0 0px;
-		margin: 0 auto;
-	}*/
 	.sweet {
-		/*text-align: center;*/
+		text-align: center;
 		font-size: 44px;
 		line-height: normal;
 	}
-	/*.sweet {
-  	max-width: 630px;
-  	font-size: 60px;
-  	line-height: 71px;
-  	text-transform: uppercase;
-  	margin-bottom: 22px;
-  	margin: 0 0 10px;
-	}*/
 	.text {
 		text-align: center;
 	}
