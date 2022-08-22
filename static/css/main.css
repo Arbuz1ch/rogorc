@@ -242,7 +242,7 @@ div {
 }
 
 .screen2 {
-	width: 100vw;
+	/*width: 100vw;*/
 	flex-wrap: wrap;
 	display: flex;
 	flex-direction: row;
@@ -605,14 +605,14 @@ footer {
 	font-family: 'Gilroy-Bold';
 	background-color: transparent;
 	border: none;
-  color: white;
+	color: white;
 	display: inline-flex;
-  align-items: center;
-  font-size: 12px;
-  line-height: 45px;
-  transition: all 0.4s ease;
-  cursor: pointer;
-  box-sizing: border-box;
+	align-items: center;
+	font-size: 12px;
+	line-height: 45px;
+	transition: all 0.4s ease;
+	cursor: pointer;
+	box-sizing: border-box;
 }
 
 .socBtn:hover {
@@ -647,11 +647,11 @@ footer {
 .socialLinks {
 	display: flex;
 	flex-direction: column;
-  background-color: #fefefe;
-  padding: 20px;
-  width: 80%;
-  animation-name: animateSocials;
-  animation-duration: 0.5s;
+	background-color: #fefefe;
+	padding: 20px;
+	width: 80%;
+	animation-name: animateSocials;
+	animation-duration: 0.5s;
 }
 
 .socialLinks a {
@@ -663,15 +663,15 @@ footer {
 }
 
 .closeSocials {
-  display: flex;
-  justify-content: flex-end;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 74px;
-  background-color: #000;
-  color: #fff;
-  box-sizing: border-box;
+	display: flex;
+	justify-content: flex-end;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 74px;
+	background-color: #000;
+	color: #fff;
+	box-sizing: border-box;
 }
 
 .close {
@@ -680,23 +680,38 @@ footer {
 }
 
 .shoppingCard {
-  display: none;
-  position: fixed;
-  z-index: 999; 
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  animation: slide;
+	display: none;
+	position: fixed;
+	z-index: 999; 
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	animation: slide;
 	overflow-x: hidden;
 	overflow-y: scroll;
 }
 
 .modalBlackout {
+	animation: fadeIn 0.5s;
 	position: fixed;
 	width: 100%;
 	height: 100%;
 	background-color: rgba(0,0,0,0.7);
+}
+
+.activeModalBlackout {
+	animation: fadeOut 0.5s;
+}
+
+@keyframes fadeIn {
+	0% { opacity: 0; }
+	100% { opacity: 1; }
+}
+
+@keyframes fadeOut {
+	0% { opacity: 1; }
+	100% { opacity: 0; }
 }
 
 .modalCloseArea {
@@ -726,13 +741,13 @@ footer {
 }
 
 @keyframes slideIn {
-  from {transform: translateX(380px);}
-  to {transform: translateX(0px);}
+	from {transform: translateX(380px);}
+	to {transform: translateX(0px);}
 }
 
 @keyframes slideOut {
-  from {transform: translateX(0px);}
-  to {transform: translateX(380px);}
+	from {transform: translateX(0px);}
+	to {transform: translateX(380px);}
 }
 
 .shoppingBtnArea {

@@ -59,6 +59,12 @@
   		</div>
 	</div>
 
+	<button href="#screen0" class="upbutton">
+		<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-up" viewBox="0 0 16 16">
+			<path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"/>
+		</svg>
+	</button>
+
 	<div class="screen" id="screen0">
 		<div class="about">
 			<video src="../static/vid/about.mp4" loop="" muted="" autoplay="" playsinline=""></video>
@@ -91,7 +97,7 @@
 
 			<div class="catalog">
 
-				<!-- <div class="cardBox">
+				<div class="cardBox">
 					<p class="nameTovar">Борщ</p>
 					<div class="tovarImg">
 						<img src="../static/images/borsh.png" class="tovarPng">
@@ -129,20 +135,14 @@
 					<p class="descrition">Настоящая кулинарная классика!</p>
 					<div class="tovarPrice"><span class="tovarPriceNumber">13</span> ₾</div>
 					<button class="buyButton">В корзину</button>
-				</div> -->
+				</div>
 
 			</div>
 		</div>
 	</div>
-
-	<button href="#screen0" class="upbutton">
-		<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-up" viewBox="0 0 16 16">
-			<path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"/>
-		</svg>
-	</button>
 	
 	<div class="shoppingCard" id="shoppingCard">
-		<div class="modalBlackout"></div>
+		<div class="modalBlackout" id="modalBlackout"></div>
 		<div class="modalCloseArea" id="modalCloseArea"></div>
 		<div class="modalTile" id="modalTile">
 			<div class="shoppingBtnArea">

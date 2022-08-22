@@ -8,6 +8,8 @@ let continueShopping = document.getElementById("continueShopping");
 
 let modalTile = document.getElementById("modalTile");
 
+let modalBlackout = document.getElementById("modalBlackout");
+
 let body1 = document.getElementById("body");
 
 const cartList = document.querySelectorAll('.cartList');
@@ -24,6 +26,7 @@ orderButton.onclick = function() {
 basket.onclick = function() {
   shoppingCard.style.display = "flex";
   modalTile.classList.remove("activeModalTile");
+  modalBlackout.classList.remove("activeModalBlackout");
   body1.style.overflow = 'hidden';
   
 
@@ -62,10 +65,11 @@ continueShopping.onclick = function() {
     cartProductList.forEach((product) => {
         product.remove();
     });
-  }, 500);
+  }, 495);
 
 
   modalTile.classList.add("activeModalTile");
+  modalBlackout.classList.add("activeModalBlackout");
   body1.style = 'none';
 
 }
@@ -81,6 +85,7 @@ window.onclick = function(event) {
       });
     }, 500);
     modalTile.classList.add("activeModalTile");
+    modalBlackout.classList.add("activeModalBlackout");
     body1.style = 'none';
     
   }
