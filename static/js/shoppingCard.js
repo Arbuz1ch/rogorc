@@ -17,9 +17,32 @@ const cartList = document.querySelectorAll('.cartList');
 const orderButton = document.getElementById('orderButton');
 
 orderButton.onclick = function() {
-  const count = document.querySelector('.productCountValue');
-  const dishValue = count.getAttribute('value');
-  console.log(dishValue);
+    // const cartProduct = document.querySelectorAll('.cartProduct');
+    // cartProduct.forEach((product) => {
+    //   const value = product.querySelector('.productCountValue').getAttribute('value')
+
+    //   Object.keys(localStorage).forEach((dish) => {
+    //     const key = JSON.parse(localStorage.getItem(dish));
+    //     key['value'] = value;
+    //     localStorage.setItem(dish, JSON.stringify(key)); 
+    //   })
+    // })
+
+    
+   const cartProduct = document.querySelectorAll('.cartProduct');
+   cartProduct.forEach((product) => {
+      const value = product.querySelector('.productCountValue').getAttribute('value')
+      const productName = product.querySelector('.productName').innerHTML;
+      const key = JSON.parse(localStorage.getItem(productName));
+      key['value'] = value;
+      localStorage.setItem(productName, JSON.stringify(key));
+   })
+
+
+
+    setTimeout(() => {
+    window.location.href = '/order';
+    }, 300)
 }
 
 
@@ -28,18 +51,6 @@ basket.onclick = function() {
   modalTile.classList.remove("activeModalTile");
   modalBlackout.classList.remove("activeModalBlackout");
   body1.style.overflow = 'hidden';
-  
-
-  // const cartDish = JSON.parse(localStorage.getItem('cartDish'));
-
-  // for (let i = 0; i < cartDish.length; i++) {
-  //   const dish = {
-  //     name: cartDish[i].name,
-  //     picture: cartDish[i].picture,
-  //     price: cartDish[i].price,
-  //     id: i,
-  //   }
-  //     renderCart(dish);
 
   Object.keys(localStorage).forEach((key) => {
     const dishkey = JSON.parse(localStorage.getItem(`${key}`));
@@ -48,6 +59,7 @@ basket.onclick = function() {
       name: dishkey.name,
       picture: dishkey.picture,
       price: dishkey.price,
+      value: dishkey.value,
     };
     console.log(JSON.parse(JSON.stringify(dish)));
     renderCart(dish);
@@ -105,6 +117,7 @@ function productRemove() {
 }
 
 function productCount() { 
+    const cartProduct = document.querySelectorAll('.cartProduct');
     cartList.forEach((box) => {
       const count = box.querySelectorAll('.count');
 
@@ -170,7 +183,8 @@ function renderCart(dish) {
   const productCountValue = document.createElement('input');
   productCountValue.classList.add('productCountValue');
   let i = 1;
-  productCountValue.setAttribute('value', i);
+  productCountValue.setAttribute('readonly', true)
+  productCountValue.setAttribute('value', dish.value);
   const plus = document.createElement('span');
   plus.classList.add('plus');
   plus.innerHTML = '+';

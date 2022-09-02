@@ -45,32 +45,56 @@ const element = document.getElementById('labelform');
 
  	event.preventDefault();
 
- 	const FORM = document.forms['form'];
+    function getOrder() {                                                                               
 
- 	let name = FORM.elements['name'].value;
-	let select = FORM.elements['select'].value;
- 	let number = FORM.elements['number'].value;
-	let adress = FORM?.elements['adress']?.value;
+        const keys = Object.keys(localStorage);
+        let orderl = []
+        for (let key of keys) {
+            const dish = JSON.parse(localStorage.getItem(key));
+            orderlist = {
+                name: dish.name,
+                value: dish.value,
+            }
+            orderl.push(orderlist)
+        }
 
-	if (adress == undefined) {
-		adress = '---';
-	}
+        sendOrder(orderl)
+    }
 
- 	const data = JSON.stringify({
- 		name: name,
-		select: select,
- 		number: number,
- 		adress: adress,
- 	});
+    function sendOrder(orderl) {
+        const FORM = document.forms['form'];
 
-	let request = new XMLHttpRequest();
+        let name = FORM.elements['name'].value;
+        let select = FORM.elements['select'].value;
+        let number = FORM.elements['number'].value;
+        let adress = FORM?.elements['adress']?.value;
+        let order = orderl;
+        
+        console.log(order)
 
-    request.open('POST', '/request', true);
-    request.setRequestHeader(
-        'Content-Type',
-        'application/json'
-    );
 
-    request.send(data);
-	
+        if (adress == undefined) {
+            adress = '---';
+        }
+
+        const data = JSON.stringify({
+            name: name,
+            select: select,
+            number: number,
+            adress: adress,
+            order: order
+        });
+
+        let request = new XMLHttpRequest();
+
+        request.open('POST', '/request', true);
+        request.setRequestHeader(
+            'Content-Type',
+            'application/json'
+        );
+
+        request.send(data);
+    }
+    
+    getOrder()
  });

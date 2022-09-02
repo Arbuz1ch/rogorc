@@ -45,14 +45,9 @@ function dataGetter(rows) {
                     name: box.querySelector('.nameTovar').innerHTML,
                     picture: box.querySelector('.tovarImg').src,
                     price: box.querySelector('.tovarPriceNumber').innerHTML,
+                    value: 1
                 }
-
-                
-                // let allrows = JSON.parse(localStorage.getItem('cartDish')) || [];
-                // allrows.push(dish);
-
                 localStorage.setItem(dish.name, JSON.stringify(dish));
-                console.log(dish);
             };
         });
     })
